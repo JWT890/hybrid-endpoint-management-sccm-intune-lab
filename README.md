@@ -14,13 +14,13 @@ Setup:
 VM1: Domain Controller  
 Memory: 4096 MB  
 Space: 60 GB  
-Network: NAT Network on Adapter 1  
+Network: NAT Network on Adapter 1  (SCCM Lab)
 Processer: 2 CPUs  
 Version: Windows 2022
 
-VM2: SCCM  
+VM2: SCCM01  
 Processer: 4 CPUs  
-Network: NAT Network on Adapter 1  
+Network: NAT Network on Adapter 1  (SCCM Lab)
 Memory: 12288 MB  
 Space: 150 GB  
 
@@ -80,6 +80,15 @@ Then refresh lab.local and go the SCCMAdmin user, what its suppose to look like:
 Then right click on sccmadmin user and choose properties, then go to member of tab and click add and type Domain Admins, check names to verify and click on ok, then appy and then ok.  
 
 # Setting up VM2
+Click on new and create the VM, and set it to Microsoft Windows version 2022 G4 Bit.  
+Memory: 12288 MB or 12 GB.  
+Video Memory: 128 MB  
+Space: 150 GB  
+Processors: 4 or 5  
+Network: NAT Network set to SCCM Lab.  
+Then attach the Windows Server 2022 ISO to the storage.  
+
+Then start the VM and follow the installation steps similiar to the first VM.  
 
 
 
