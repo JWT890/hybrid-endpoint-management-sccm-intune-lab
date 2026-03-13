@@ -104,6 +104,11 @@ Then click on OK twice and and close it out.
 Then go to in Local Server and click on Computer Name:  
 <img width="418" height="469" alt="image" src="https://github.com/user-attachments/assets/1f05fd8d-063c-4cc9-8059-6e912e4b1e7e" />  
 Click on change and name it SCCM01 and the domain type lab.local and then click on OK.  
+*Make sure to have the DC up and running during this*  
+After clicking on OK you will see this:  
+<img width="462" height="303" alt="image" src="https://github.com/user-attachments/assets/93639a51-6101-4852-908c-364254de6b4d" />  
+
+
 
 
 
