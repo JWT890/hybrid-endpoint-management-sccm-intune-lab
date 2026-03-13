@@ -3,7 +3,7 @@ This guide provides a comprehensive, step-by-step walkthrough for building a ful
 
 Windows 2022 Server download: https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022  
 Windows 10/11 Enterprise: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-enterprise  
-SQL Server Developer Edition download: https://go.microsoft.com/fwlink/?linkid=866662  
+SQL Server Developer Edition download: https://www.microsoft.com/en-us/sql-server/sql-server-downloads  
 Microsoft Endpoint Configuration Manager Current Branch (SCCM): https://info.microsoft.com/ww-landing-microsoft-endpoint-configuration-manager.html?culture=en-us&country=us  
 Windows Assessment and Deployment Kit ADK: https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install  
 
@@ -118,7 +118,22 @@ After waiting for a few seconds you should see this:
 Then go to the Server Manager and click on Manage -> Add Roles and Features, then click on Web Server.  
 Then go check .Net Extensibility 3.5 and 4.8, ASP.NET 3.5 and ASP.NET 4.8 and their sub items, check IIS 6 and its subs, Security with windows authentication checked and a couple others.  
 Then click next till installation review, check restart, hit yes and then install.  
-After waiting for a few minutes, then click close and 
+After waiting for a few minutes, then click close and then its time to mount the SQL Server ISO.  
+Download from above and turn off the VM, then go to settings -> storage and then click on the optical drive option:  
+<img width="287" height="319" alt="image" src="https://github.com/user-attachments/assets/c99da877-a3b6-45f6-a2b3-02e0e68aec1c" />  
+*The first option*  
+<img width="1519" height="531" alt="image" src="https://github.com/user-attachments/assets/3c3fdbd9-bdd7-4ccc-9b5c-771f96c4ffe2" />  
+Make sure to download from the third option and after downloading, run the installer and you will see this screen:  
+<img width="847" height="673" alt="image" src="https://github.com/user-attachments/assets/4c7bbdc5-6f00-48f8-98e3-fb9921b068ee" />  
+Click on Download Media and you will see this screen:  
+<img width="836" height="640" alt="image" src="https://github.com/user-attachments/assets/dbea4971-d3a2-41d7-955c-ff9255e1d87a" />  
+Select the ISO File and then click download and the download media process will begin, then wait for a few minutes and it should appear in Downloads
+<img width="633" height="59" alt="image" src="https://github.com/user-attachments/assets/d3776c5b-c34e-4fae-a0a9-e6293bba0dd9" />  
+Then go back to the SCCM VM settings and get it mounted.  
+
+
+
+
 
 
 
