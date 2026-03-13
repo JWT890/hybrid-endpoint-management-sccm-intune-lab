@@ -130,6 +130,14 @@ Click on Download Media and you will see this screen:
 Select the ISO File and then click download and the download media process will begin, then wait for a few minutes and it should appear in Downloads
 <img width="633" height="59" alt="image" src="https://github.com/user-attachments/assets/d3776c5b-c34e-4fae-a0a9-e6293bba0dd9" />  
 Then go back to the SCCM VM settings and get it mounted.  
+After clicking on Optical Drive option you will the medium selecter screen, then click on the add option:  
+<img width="958" height="144" alt="image" src="https://github.com/user-attachments/assets/c772864d-1d8b-4e7c-bc8f-4bbffa334e0f" />  
+After clicking on add, go and find the SQL iso file click choose and it should appear in the storage part:  
+<img width="276" height="313" alt="image" src="https://github.com/user-attachments/assets/6ff8c0da-7f0e-4d7f-a1cd-05445ee49f74" />  
+Click OK and get the VM back up to install SQL Server in the VM.  
+
+
+
 
 
 
