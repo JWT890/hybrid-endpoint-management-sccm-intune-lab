@@ -118,6 +118,7 @@ After waiting for a few seconds you should see this:
 Then go to the Server Manager and click on Manage -> Add Roles and Features, then click on Web Server.  
 Then go check .Net Extensibility 3.5 and 4.8, ASP.NET 3.5 and ASP.NET 4.8 and their sub items, check IIS 6 and its subs, Security with windows authentication checked and a couple others.  
 Then click next till installation review, check restart, hit yes and then install.  
+After waiting for a few minutes, then click close and 
 
 
 
