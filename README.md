@@ -89,7 +89,7 @@ Network: NAT Network set to SCCM Lab.
 Then attach the Windows Server 2022 ISO to the storage.  
 
 Then start the VM and follow the installation steps similiar to the first VM.  
-
+test
 
 
 
