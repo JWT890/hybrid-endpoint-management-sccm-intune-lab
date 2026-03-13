@@ -113,6 +113,13 @@ Then click OK a couple times and then go and restart the VM.
 After restarting you should see the Other User option pop up:  
 <img width="1043" height="777" alt="image" src="https://github.com/user-attachments/assets/51b31487-41be-4837-9ba7-e9077a031482" />  
 Click on Other User and sign as the SCCMAdmin user account that was created.  
+After waiting for a few seconds you should see this:  
+<img width="1027" height="778" alt="image" src="https://github.com/user-attachments/assets/7c3074cc-3927-48a4-9223-c0e83a1df3db" />  
+Then go to the Server Manager and click on Manage -> Add Roles and Features, then click on Web Server.  
+Then go check .Net Extensibility 3.5 and 4.8, ASP.NET 3.5 and ASP.NET 4.8 and their sub items, check IIS 6 and its subs, Security with windows authentication checked and a couple others.  
+Then click next till installation review, check restart, hit yes and then install.  
+
+
 
 
 
