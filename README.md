@@ -93,6 +93,22 @@ Click next on the first screen then install now, then for OS select the second o
 Then wait for a while for the VM to get up and installed.  
 Then after a few minutes, the screen to customize settings will pop up to set the password and username. After setting the password, click finish and then you will see the login screen.  
 After a few seconds the server manager should appear.  
+<img width="1023" height="777" alt="image" src="https://github.com/user-attachments/assets/8f8a6d7f-abd9-47cd-9956-7ce7c5bbfa20" />  
+Then go to Local Server and click on Ethernet:  
+<img width="764" height="414" alt="image" src="https://github.com/user-attachments/assets/e42d6053-1f0d-45c3-b3bd-6a0f0e25e9f7" />  
+After clicking on the thing beside it:  
+<img width="788" height="593" alt="image" src="https://github.com/user-attachments/assets/c1bcfe9b-be8b-45e2-8207-d6b3b39d9469" />  
+Then right click on Ethernet -> then Properties and then double click on IPv4 and enter in this info:  
+<img width="401" height="461" alt="image" src="https://github.com/user-attachments/assets/10d9b65d-24fc-4f14-9166-8ed910480116" />  
+Then click on OK twice and and close it out.  
+Then go to in Local Server and click on Computer Name:  
+<img width="418" height="469" alt="image" src="https://github.com/user-attachments/assets/1f05fd8d-063c-4cc9-8059-6e912e4b1e7e" />  
+Click on change and name it SCCM01 and the domain type lab.local and then click on OK.  
+
+
+
+
+
 
 
 
