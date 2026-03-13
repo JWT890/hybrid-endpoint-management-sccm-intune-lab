@@ -91,6 +91,9 @@ Then attach the Windows Server 2022 ISO to the storage.
 Then start the VM and follow the installation steps similiar to the first VM.  
 Click next on the first screen then install now, then for OS select the second opption for standard evaluation, then click on custom so you can see the unallocated space option for the drive.  
 Then wait for a while for the VM to get up and installed.  
+Then after a few minutes, the screen to customize settings will pop up to set the password and username. After setting the password, click finish and then you will see the login screen.  
+After a few seconds the server manager should appear.  
+
 
 
 
