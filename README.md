@@ -137,8 +137,16 @@ After clicking on add, go and find the SQL iso file click choose and it should a
 Click OK and get the VM back up to install SQL Server in the VM.  
 After signing back in, go the file folder and you should see the SQL Server folder in there:  
 ![SQL Server folder in file explorer](./images/actual-sql-folder.png)
-Then click on setup.exe
-
+Then click on setup.exe and wait for a couple seconds.  
+After waiting this screen will appear:
+![SQL Install exe running](./images/sql-install.png)    
+Then click on New SQL Server stand-alone installation, select evaluation edition and hit next.  
+Then accept the terms, hit next, make sure to uncheck Microsoft Update and hit next, next again, then wait for setup files to install.  
+![SQL Rules install](./images/sql-install-rules.png)    
+Then hit next, in sql server feature selection, select database engine services, then the full text option, then hit next, for instance configuration keep it at default instance and hit next. 
+Then in SQL Server Configuration, go to the service accounts and change the info for SQL Server Database Engine and SQL Server Agent like so:   
+![SQL Server Accounts](./images/sql-accounts.png)
+Then go to the Collation tab.
 
 
 
