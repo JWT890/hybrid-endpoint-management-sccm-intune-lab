@@ -136,6 +136,7 @@ After clicking on add, go and find the SQL iso file click choose and it should a
 <img width="276" height="313" alt="image" src="https://github.com/user-attachments/assets/6ff8c0da-7f0e-4d7f-a1cd-05445ee49f74" />  
 Click OK and get the VM back up to install SQL Server in the VM.  
 After signing back in, go the file folder and you should see the SQL Server folder in there:  
+![SQL Server folder in file explorer](./images/sql-folder.png)
 
 
 
