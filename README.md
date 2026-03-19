@@ -150,7 +150,12 @@ Then in SQL Server Configuration, go to the service accounts and change the info
 Then go to the Collation tab and make sure its set to SQL_LATIN1_General_CP1_CI_AS like so: 
 ![SQL Latin](./images/sql-latin.png)    
 Then hit next, on server configuration, select mixed mode, then enter in SCCM Admin's password, then select current user. Then move on the tab for Data Directories and accept the defaults, then move on to TempDB and accept the defaults.    
-Then hit next till install and wait for a few minutes.  
+Then hit next till install and wait for a few minutes. After waiting for a few minutes, you should see the installation has completed. Select close. Then go to Microsofts site and download SSMS and install it.   
+After installing, go to start and search for SQL Server Management Studio, then open SQL Server Configuration Manager and navigate to TCP/IP section within SQL Server Network Config like so:  
+![SQL Path](./images/sql-path-to-tcp.png)   
+Then right click on TCP/IP and enable it. Then close out of Config Manager and get Server Management Studio up. 
+In the first menu, select skip and add later. When connecting to the local SQL Server, click on browse and look at local like so:
+![SQL Local](./images/sql-config.png)
 
 
 
