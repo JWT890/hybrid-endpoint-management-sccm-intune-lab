@@ -144,9 +144,11 @@ Then click on New SQL Server stand-alone installation, select evaluation edition
 Then accept the terms, hit next, make sure to uncheck Microsoft Update and hit next, next again, then wait for setup files to install.  
 ![SQL Rules install](./images/sql-install-rules.png)    
 Then hit next, in sql server feature selection, select database engine services, then the full text option, then hit next, for instance configuration keep it at default instance and hit next. 
-Then in SQL Server Configuration, go to the service accounts and change the info for SQL Server Database Engine and SQL Server Agent like so:   
+Then in SQL Server Configuration, go to the service accounts and change the info for SQL Server Database Engine and SQL Server Agent by clicking on account name, then dropdown menu, click on browse, enter in LAB\sqlservice, then click on OK and in password, type the password like so:   
+![SQL selection](./sql-browse.png)  
 ![SQL Server Accounts](./images/sql-accounts.png)
-Then go to the Collation tab.
+Then go to the Collation tab and make sure its set to SQL_LATIN1_General_CP1_CI_AS like so: 
+![SQL Latin](./images/sql-latin.png)
 
 
 
