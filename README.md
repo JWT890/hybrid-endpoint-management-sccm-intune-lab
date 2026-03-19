@@ -156,7 +156,9 @@ After installing, go to start and search for SQL Server Management Studio, then 
 Then right click on TCP/IP and enable it. Then close out of Config Manager and get Server Management Studio up. 
 In the first menu, select skip and add later. When connecting to the local SQL Server, click on browse and look at local like so:
 ![SQL Local](./images/sql-config.png)
-
+Make sure to make encryption optional, then click on connect.   
+Then you should see the SQL Server, then right click on the name and click on properties and go to memory.  
+On memory, set the maximum to 4096 and click on OK
 
 
 
