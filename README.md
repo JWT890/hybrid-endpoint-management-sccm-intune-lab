@@ -148,7 +148,10 @@ Then in SQL Server Configuration, go to the service accounts and change the info
 ![SQL selection](./sql-browse.png)  
 ![SQL Server Accounts](./images/sql-accounts.png)
 Then go to the Collation tab and make sure its set to SQL_LATIN1_General_CP1_CI_AS like so: 
-![SQL Latin](./images/sql-latin.png)
+![SQL Latin](./images/sql-latin.png)    
+Then hit next, on server configuration, select mixed mode, then enter in SCCM Admin's password, then select current user. Then move on the tab for Data Directories and accept the defaults, then move on to TempDB and accept the defaults.    
+Then hit next till install and wait for a few minutes.  
+
 
 
 
