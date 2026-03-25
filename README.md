@@ -201,6 +201,15 @@ Then open PowerShell as Admin and run a command:
 ![Command](./images/command.png)    
 Then go the SCCM iso folder and click on the Splash.hta file and hit open and you should see this:  
 ![Splash screen](./images/splash.png)   
+Select install and then click on next and then you see this:    
+![Setup screen](./images/setup.png) 
+Select the Use typical installation media option and hit next.  
+For the product key, select the 180 day option. Then hit next and accept the license terms. 
+Then when it comes to Download, select the path where the Temp folder was created and hit download and wait for a while.    
+After waiting for a while this screen will pop up:  
+![Site UP](./images/site.png)   
+Put in the requisite info from the image and hit next.  
+Then keep on hitting next till you get to the prereqs, wait a second, then hit next.    
 
 
 
