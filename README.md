@@ -210,7 +210,10 @@ After waiting for a while this screen will pop up:
 ![Site UP](./images/site.png)   
 Put in the requisite info from the image and hit next.  
 Then keep on hitting next till you get to the prereqs, wait a second, then hit next.    
-
+For the prereqs, you will have to install WSUS in Server Manager, Remote Differential Compression in features, delete a certain SQL connection that might pop up, change the SQL Server max memory to 8142 MB and install the Microsoft SQL Server 2012 Native Client. 
+AFter fixing them up:   
+![Fix](./images/check.png)  
+Then hit install now and wait for a while
 
 
 
