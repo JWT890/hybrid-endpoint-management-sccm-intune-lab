@@ -186,7 +186,24 @@ Then hit refresh and right click on System Management since it will appear now.
 Then right click on it and go to properties and move to the Security tab.   
 Click the advanced option you see and you will see this:    
 ![Options](./images/options.png)    
-Then click on Add and then select a principal
+Then click on Add and then select a principal. Then go to object types and select computers and it will show up.    
+Then type SCCM$ and the computer should pop up like so: 
+![Computer](./images/computer.png)  
+After selecting ok, check full control and click OK 3 times and close out ADSI edit.    
+Then in the SCCM01 VM, go and download the Windows 10 ADK and run it.   
+Keep default settings, uncheck the gather insights and accept the license, choose only deployment tools and USMT and select install.   
+After waiting for a few minutes, it should be done and hit close.   
+Then go download the Windows PE ADK and install it. 
+Make sure to so no to tracking and then wait for a few minutes. 
+Then hit close. Then go and create a folder called Temp in the C:\ section. 
+Then go and download a Visual C++ redistributable and after that go to the PowerShell as Admin like below
+Then open PowerShell as Admin and run a command:   
+![Command](./images/command.png)    
+Then go the SCCM iso folder and click on the Splash.hta file and hit open and you should see this:  
+![Splash screen](./images/splash.png)   
+
+
+
 
 
 
