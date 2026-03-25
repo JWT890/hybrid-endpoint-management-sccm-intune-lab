@@ -168,6 +168,15 @@ A command prompt windows will pop for a few seconds, then close. Then go to the 
 ![File output](./images/file-output.png)    
 Then open the file  
 *Note this should be run in the DC01 and not the second VM*
+What it should look like in DC01 after running: 
+![File run](./images/file-success.png)  
+Then in Server Manager, go to tools and select ADSI Edit and see this:  
+![ASDI edit](./images/ASDI.png) 
+Right click on ADSI Edit and select connect to. 
+You should see this:    
+![ASDI edit](./images/ASDI-settings.png)    
+It should look good since the lab domain is there and then click on OK to see this: 
+![ASDI Settings](./images/ASDI-settings2.png)   
 
 
 
