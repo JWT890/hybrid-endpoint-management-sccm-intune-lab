@@ -177,6 +177,16 @@ You should see this:
 ![ASDI edit](./images/ASDI-settings.png)    
 It should look good since the lab domain is there and then click on OK to see this: 
 ![ASDI Settings](./images/ASDI-settings2.png)   
+After clicking on the Default naming contect, you should see DC=lab,DC=local, then CN=system:   
+![Expand](./images/dc-system.png)   
+Then right click on CN=System and select new -> object. 
+After clicking on new, you will see a list of options, then scroll down till you see container and hit next.    
+Then for value, name it System Management, hit next, then finish.   
+Then hit refresh and right click on System Management since it will appear now. 
+Then right click on it and go to properties and move to the Security tab.   
+Click the advanced option you see and you will see this:    
+![Options](./images/options.png)    
+Then click on Add and then select a principal
 
 
 
