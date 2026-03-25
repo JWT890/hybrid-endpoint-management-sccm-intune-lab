@@ -159,7 +159,15 @@ In the first menu, select skip and add later. When connecting to the local SQL S
 Make sure to make encryption optional, then click on connect.   
 Then you should see the SQL Server, then right click on the name and click on properties and go to memory.  
 On memory, set the maximum to 4096 and click on OK
-
+Then get the SCCM iso into it, like with the SQL Server one.    
+You will however have to burn a iso using Anyburn after downloading relavant files.  
+After getting it up, you should be able to see it.  
+![SCCM ISO](./images/sccm-sio.png)  
+Right click on the file named extadsch.exe and run it as admin. 
+A command prompt windows will pop for a few seconds, then close. Then go to the normal C:\ folder and look for a file like so:  
+![File output](./images/file-output.png)    
+Then open the file  
+*Note this should be run in the DC01 and not the second VM*
 
 
 
