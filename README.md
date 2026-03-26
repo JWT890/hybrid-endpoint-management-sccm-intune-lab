@@ -213,7 +213,16 @@ Then keep on hitting next till you get to the prereqs, wait a second, then hit n
 For the prereqs, you will have to install WSUS in Server Manager, Remote Differential Compression in features, delete a certain SQL connection that might pop up, change the SQL Server max memory to 8142 MB and install the Microsoft SQL Server 2012 Native Client. 
 AFter fixing them up:   
 ![Fix](./images/check.png)  
-Then hit install now and wait for a while
+Then hit install now and wait for a while. 
+During this make sure to have to delete the excess database in SQL, should start as CM_, make sure that ODBC Driver 18 is set to 18.5.2 or similiar in 15, follow the path of C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment and create a folder named x86 and copy the amd64 contents into it, inside the x86 folder in en-us, and rename the winpe.wim to boot.wim. Then go to C:\Program Files\Microsoft Configuration Manager\OSD\boot\i386 and copy the boot.wim file into it. Then go to task manager, to details, and close out any instances of msiexec.exe and then run ConsoleSetup.exe. Then it should have installed. 
+Then you should see this:   
+![Site2](./images/site2.png)    
+Then go to Monitoring -> System Status -> Component status and see this:    
+![Status health](./images/health.png)   
+Then go search SMS_SITE_COMPONENT_MANAGER and SMS_EXECUTIVE to see if they are green which they should be.  
+Then go to Administration -> Site Configuration -> Servers and Site System Roles and check to see management point and distribution point roles are there which they should like below: 
+![Looking](./images/settings.png)   
+
 
 
 
