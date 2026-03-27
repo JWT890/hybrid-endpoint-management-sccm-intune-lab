@@ -233,6 +233,16 @@ Network: NAT Network set to SCCM Lab
 And a Windows 10 iso    
 Then press start to get the VM up to install.   
 
+After getting it up, should see that main screen:   
+![Normal Windows](./images/10.png)  
+Then right click start and go to network connections and click on change adapter options, then right click on Ethernet and choose properties and double click on IPv4 and select Obtain an IP Address Automatically.    
+Set it up like this:    
+![Client Settings](./images/client-network.png) 
+Then click on OK a couple times and then go to the command prompt and type ipconfig /renew to get the IP and DNS.   
+Then right click on start and go to system and click on rename this PC advanced. Then set the computer name to CLIENT01 and domain to lab.local.    
+![Client join](./images/client-domain.png)  
+Then click on and type the DC01 username and password to get it successfully domain joined. 
+Then go and restart the computer. Then sign in as the sccm admin account and wait for it to pop up.    
 
 
 
