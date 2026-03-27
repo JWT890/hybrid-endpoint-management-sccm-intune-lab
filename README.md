@@ -85,7 +85,8 @@ Memory: 12288 MB or 12 GB.
 Video Memory: 128 MB  
 Space: 150 GB  
 Processors: 4 or 5  
-Network: NAT Network set to SCCM Lab.  
+Network: NAT Network set to SCCM Lab. 
+Network2: NAT   
 Then attach the Windows Server 2022 ISO to the storage.  
 
 Then start the VM and follow the installation steps similiar to the first VM.  
@@ -222,6 +223,16 @@ Then go to Monitoring -> System Status -> Component status and see this:
 Then go search SMS_SITE_COMPONENT_MANAGER and SMS_EXECUTIVE to see if they are green which they should be.  
 Then go to Administration -> Site Configuration -> Servers and Site System Roles and check to see management point and distribution point roles are there which they should like below: 
 ![Looking](./images/settings.png)   
+
+# Setting up VM3
+Memory: 4096 MB 
+Video Memory: 128 MB    
+Space: 60 GB    
+Processors: 4   
+Network: NAT Network set to SCCM Lab    
+And a Windows 10 iso    
+Then press start to get the VM up to install.   
+
 
 
 
