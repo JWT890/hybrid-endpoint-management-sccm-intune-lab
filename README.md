@@ -243,8 +243,19 @@ Then right click on start and go to system and click on rename this PC advanced.
 ![Client join](./images/client-domain.png)  
 Then click on and type the DC01 username and password to get it successfully domain joined. 
 Then go and restart the computer. Then sign in as the sccm admin account and wait for it to pop up.    
+Then go back to the second VM and continue to get SCCM fully set up.    
 
-
+# SCCM Config Continued
+Back in the SCCM VM, go the configuration manager console, go to admin -> hierachy config -> discovery methods, then right click on Active Directory System Discovery and enable Active Directory System Discovery. Then click on the star icon to add a new container. 
+![Container](./images/sccm-more.png)    
+Then you will see the option to browse, click on it and expand the lab.local and select computers, then click OK a couple times, then right click on System Discovery again and select run full discovery now and hit yes.  
+Then go and do the same thing for the Active Directory User Discovery and Group Discovery respectively with users and groups.   
+Then go to Boundaries and right click and choose Create Boundary like below:    
+![Boundary settings](./images/boundary.png) 
+Then for network type 192.168.10.0 and for subnet mask type 255.255.255.0 then click apply and OK.  
+Then go to Boundary Groups and choose create Boundary Group and name it Lab Boundary Group and click add.   
+Name it Lab Boundary Group and click on add and select the lab subnet, then go to references and check use this boundary for site assignment and click on add and select the lab.local option and click ok and ok once more to see it pop up like below:    
+![Boundary Group](./images/boundary-group.png)  
 
 
 
