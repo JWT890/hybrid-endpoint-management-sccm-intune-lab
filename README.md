@@ -256,6 +256,11 @@ Then for network type 192.168.10.0 and for subnet mask type 255.255.255.0 then c
 Then go to Boundary Groups and choose create Boundary Group and name it Lab Boundary Group and click add.   
 Name it Lab Boundary Group and click on add and select the lab subnet, then go to references and check use this boundary for site assignment and click on add and select the lab.local option and click ok and ok once more to see it pop up like below:    
 ![Boundary Group](./images/boundary-group.png)  
+Then its time to install SCCM Client on CLIENT01. Go assets and compliance -> devices and see this: 
+![Devices](./images/devices.png)    
+Then right click on CLIENT01 and select Install Client and hit next and select the always install and site install buttons and hit next and once again
+![Client Install](./images/client-install.png)  
+Then it should take a couple seconds to install. Once done, hit close and go to the CLIENT01 VM and go to the Control Panel
 
 
 
