@@ -268,6 +268,15 @@ Then in the Client VM run "\\SCCM01\C$\Program Files\Microsoft Configuration Man
 ![Logs](./images/logs.png)  
 Make sure to also in the DC01 VM to go to DNS Manager --> Forward Lookup Zones -> lab.local and right click on it and select New Host for A.    
 Then right click on DC01, choose connect to DNS Server, then select the following computer and type DC01 then click OK. Then for SCCM01 click on New Host, name it SCCM01, FDQN should be SCCM01.lab.local, IP address should be 192.168.10.20, then click create associated PTR record and click on Add HOst, then ok, the done. Then in Client run, ipconfig /flushdns, noslookup SCCM01, ping SCCM01 and dir \\SCCM01\c$ which should work.  
+Then in the command line in Client run: xcopy \\SCCM01\C$\"Program Files"\"Microsoft Configuration Manager"\Client C:\Temp\SCCMClient\ /E /I /Y. This should be the result: 
+![Files command](./images/files.png)    
+Then run cd C:\Temp\SCCMClient to get into the correct directory and run ccmsetup.exe SMMSITECODE=PS1 and hit enter and wait for a few minutes.
+After waiting for a few minutes you should see this:    
+![Installation](./images/install.png)   
+![Config prop](./images/config-prop.png)    
+![Exit code](./images/success.png)  
+Then go to Services.msc and check to see if SMS Agent Host is running:  
+![Service](./images/agent-run.png)  
 
 
 
