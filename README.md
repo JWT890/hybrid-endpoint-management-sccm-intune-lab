@@ -261,7 +261,13 @@ Then its time to install SCCM Client on CLIENT01. Go assets and compliance -> de
 Then right click on CLIENT01 and select Install Client and hit next and select the always install and site install buttons and hit next and once again
 ![Client Install](./images/client-install.png)  
 Then it should take a couple seconds to install. Once done, hit close and go to the CLIENT01 VM and go to the Control Panel
-
+Alernatively turn off both VM firewalls by running Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False, then ru
+n in the SCCM01 conmand line dir \\CLIENT01\c$ which should show:   
+![Directory image](./images/directory.png)  
+Then in the Client VM run "\\SCCM01\C$\Program Files\Microsoft Configuration Manager\Client\ccmsetup.exe" SMSSITECODE=PS1 and hit enter and then wait for a couple seconds. When done type notepad C:\Windows\ccmsetup\Logs\ccmsetup.log to see this:   
+![Logs](./images/logs.png)  
+Make sure to also in the DC01 VM to go to DNS Manager --> Forward Lookup Zones -> lab.local and right click on it and select New Host for A.    
+Then right click on DC01, choose connect to DNS Server, then select the following computer and type DC01 then click OK. Then for SCCM01 click on New Host, name it SCCM01, FDQN should be SCCM01.lab.local, IP address should be 192.168.10.20, then click create associated PTR record and click on Add HOst, then ok, the done. Then in Client run, ipconfig /flushdns, noslookup SCCM01, ping SCCM01 and dir \\SCCM01\c$ which should work.  
 
 
 
