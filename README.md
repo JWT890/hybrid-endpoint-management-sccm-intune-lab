@@ -276,7 +276,10 @@ After waiting for a few minutes you should see this:
 ![Config prop](./images/config-prop.png)    
 ![Exit code](./images/success.png)  
 Then go to Services.msc and check to see if SMS Agent Host is running:  
-![Service](./images/agent-run.png)  
+![Service](./images/agent-run.png)
+Then go to the SCCM VM and open up the Config Man Console -> Assets and Compliance -> and Devices and check to see if Client Activity is marked with a yes: 
+![Activity](./images/activity.png)  
+
 
 
 
