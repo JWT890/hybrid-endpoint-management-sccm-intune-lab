@@ -280,6 +280,28 @@ Then go to Services.msc and check to see if SMS Agent Host is running:
 Then go to the SCCM VM and open up the Config Man Console -> Assets and Compliance -> and Devices and check to see if Client Activity is marked with a yes: 
 ![Activity](./images/activity.png)  
 
+Now its time to move to other steps/learning in this
+
+# Device Collection
+
+Pull up the Config Man Console and go to Assets and Compliance and right click on Device Collection. After that click on create device collection.  
+![Collection](./images/collection-name.png) 
+Name it Windows 10 Workstations, for comment put All Windows 10 client computers and for limiting collection click on browse and select all systems and then hit next.  
+Then you will see the membership rules screen:  
+![Rules](./images/rules.png)    
+Then click on add rule and choose query role. Name it All Windows 10 Devices and then click on Edit Query statement and see this:   
+![Query](./images/query.png)    
+
+
+# Test Application Package
+
+# Windows Updates Deployment
+
+# Task Sequence
+
+# Report Creation
+
+# Compliance Settings
 
 
 
