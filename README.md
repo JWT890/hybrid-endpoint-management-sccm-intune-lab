@@ -296,7 +296,9 @@ Then wait a couple seconds for it to complete successfully and then hit close. T
 ![Comp Collection](./images/computer-collection.png)    
 Then go right click on Device Collections and create a new device collection for test lab computers. Name it Test Lab Computers and set the limiting collection to All Systems and hit next and for the rule choose direct rule and hit next and you should see this:   
 ![Rules2](./images/rules2.png)  
-In the value menu enter CLIENT01 and hit next
+In the value menu enter CLIENT01 and hit next and you see it:   
+![Resource](./images/resource.png)  
+Then hit next, then close, then hit next 2 times and then close.
 
 # Test Application Package
 
