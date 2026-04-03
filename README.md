@@ -291,7 +291,12 @@ Then you will see the membership rules screen:
 ![Rules](./images/rules.png)    
 Then click on add rule and choose query role. Name it All Windows 10 Devices and then click on Edit Query statement and see this:   
 ![Query](./images/query.png)    
-
+Then replace the query with this:    select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.OperatingSystemNameandVersion like "%Workstation 10.0%". Then hit OK twice and check the option for using incremental updates for this and set the schedule to every 7 days or so then hit next to see summary and then hit next.  
+Then wait a couple seconds for it to complete successfully and then hit close. Then wait a couple seconds and it should appear in the collection:   
+![Comp Collection](./images/computer-collection.png)    
+Then go right click on Device Collections and create a new device collection for test lab computers. Name it Test Lab Computers and set the limiting collection to All Systems and hit next and for the rule choose direct rule and hit next and you should see this:   
+![Rules2](./images/rules2.png)  
+In the value menu enter CLIENT01 and hit next
 
 # Test Application Package
 
