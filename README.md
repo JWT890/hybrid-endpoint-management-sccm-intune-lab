@@ -310,6 +310,17 @@ Then click apply and ok. Then go to the Config Man Console and go to Software Li
 After which this will pop up:   
 ![Screen](./images/screen.png)  
 Then right beside the browse button type: \\SCCM01\Applications$\Google ChromeStandaloneEnterprise64.msi and hit next.  
+Or the better run so not to run into errors, go to PowerShell and run New-SmbShare -Name "Sources$" -Path "C:\Sources" -FullAccess "Everyone" and hit enter.    
+Then select the manual option here: 
+![Manual](./images/manual.png)  
+Then hit next and see this: 
+![Info](./images/info.png)  
+Name it Google Chrome, publisher to Google LLC and software version to latest and hit next. 
+Then hit next till deployment type and click on add.    
+Select manual once again and hit next. For General info name it Google Chrome installer and hit next.   
+Then you will reach this screen:    
+![Content](./images/content.png)    
+For content location have it set to \\SCCM01\Sources$\Applications\Google Chrome since typing in C:\ path won't work. For the other two go to browse and choose the installer.  
 
 
 # Windows Updates Deployment
