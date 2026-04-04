@@ -331,6 +331,13 @@ Click on Standard program and hit next. In Standard program name it Install Chro
 Then hit next until the completion is successfully done.    
 Then it should appear in the packages screen like so:   
 ![Packages](./images/packages.png)  
+Then right click on Google Chrome and click on Deploy to see this:  
+![Deploy](./images/deploy.png)  
+Click on Browse and choose Test Lab Computers selection and then hit next for the content page. Click on the add button and select distribution point and select SCCM01.lab.local, choose OK, then hit next.    
+For deployment settings choose required and hit next. For scheduling, set the available time for a few minutes later in the day and expire for a few minutes afterwards and for assignment schedule select as soon as possible. Then hit next.  
+Then hit next until the install screen. Then after a couple seconds:    
+![Next](./images/status.png)    
+Then go to Config Manager in the Client VM. 
 
 
 # Windows Updates Deployment
