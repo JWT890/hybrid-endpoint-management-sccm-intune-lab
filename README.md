@@ -302,6 +302,16 @@ Then hit next, then close, then hit next 2 times and then close.
 
 # Test Application Package
 
+Pull up Microsoft Edge and go download an application that can be installed such as Google Chrome and then go create a source folder for it in the SCCM VM by typing mkdir "C:\Sources\Applications\Google Chrome". Then copy or move the installer into it.    
+Then go the Applications folder and right click on it to go to Properties -> Sharing then click on Advanced Sharing:    
+![Sharing](./images/sharing.png)  
+Then click on Share this Folder and edit the share name to include $ after Applications and set permissions to everyone can read.   
+Then click apply and ok. Then go to the Config Man Console and go to Software Library -> Application Management and then click on Applications and right click on it and select create application. 
+After which this will pop up:   
+![Screen](./images/screen.png)  
+Then right beside the browse button type: \\SCCM01\Applications$\Google ChromeStandaloneEnterprise64.msi and hit next.  
+
+
 # Windows Updates Deployment
 
 # Task Sequence
