@@ -321,6 +321,16 @@ Select manual once again and hit next. For General info name it Google Chrome in
 Then you will reach this screen:    
 ![Content](./images/content.png)    
 For content location have it set to \\SCCM01\Sources$\Applications\Google Chrome since typing in C:\ path won't work. For the other two go to browse and choose the installer.  
+Since its likely that the error will again go to PowerShell and type these commands:    
+![Access](./images/access.png)  
+Then go to the command line and type rename "C:\Sources\Applications\Google Chrome" GoogleChrome after going to the Sources Folder and granting sccmadmin full control. Then the path \\SCCM01\Sources$\Applications\GoogleChrome should work.  
+If it doesn't go to Software Library -> Application Management -> Packages and right click on it to create a package.   
+![Package](./images/package.png)    
+Name it Google Chrome, description of Google Chrome Enterprise Browser, Manufacturer as Google LLC, English Language and latest version, check the package contains source folder and choose the folder its in and hit next.    
+Click on Standard program and hit next. In Standard program name it Install Chrome for command line selct the msi file, run set to hidden and program set to whether or not the user is logged in and hit next. 
+Then hit next until the completion is successfully done.    
+Then it should appear in the packages screen like so:   
+![Packages](./images/packages.png)  
 
 
 # Windows Updates Deployment
