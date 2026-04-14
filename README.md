@@ -341,7 +341,11 @@ Then go to Config Manager in the Client VM.
 *While troubleshooting over the past few days, I found that there was an issue with the automatic deployment not going through to the Client VM. So I had to manually deploy the Chrome package. Can review the document I uploaded above. Will provide steps for how until can be fixed but the Claude doc is better at explaining*
 First step is by noticing that the BitsTransfer 404 error, start by going to the DP first and using a correct path such as Invoke-WebRequest "http://192.168.10.20/SMS_DP_SMSPKG$/PS100006" -UseBasicRouting. Type http instead of https.   
 Then type Start-BitsTransfer -Source "http://192.168.10.20/SMS_DP_SMSPKG$/PS100006.3/googlechromestandaloneenterprise64.msi" -Destination "C:\Windows\Temp\chrome.msi" -ProxyUsage NoProxy. Then type Get-ChildItem "C:\SCCMContentLib\PkgLib" | Where-Object Name -like "*PS100006*" 
-Next step
+Next step is to verify or change the assigned Management Point for the client. Type (Get-WmiObject -Namespace root\ccm -Class SMS_Authority).CurrentManagementPoint, then Resolve-DnsName SCCM01, then nslookup SCCM01. In the meantime, as a workaround, add a temp path by typing Add-Content "C:\Windows\System32\drivers\etc\hosts" "192.168.10.20 SCCM01 SCCM01.sccm.lab.local" or turn the DC VM. Then type Resolve-DnsName SCCM01 which should return SCCM01 IP. Then type Restart-Service CcmExec, then Start-Sleep -Seconds 30, then type (Get-WmiObject -Namespace root\ccm -Class SMS_Authority).CurrentManagementPoint. 
+Next step is to check the CRL to see if its blocking content download. Start by typing Get-WmiOjbect -Namespace root\ccm\softmgmtagent -Class CacheInfoEx | Where-Object { $_.ContentID -like "*PS100006*" } | Select-Object ContentID, ContentVersion, Location, ContentSize. Then go to Administration -> Site Configuration -> Sites, right click on sites and go to Properties and go the Communications Security tab and uncheck the Clients check the CRL for site systems, then apply -> OK. Then restart and type Restart-Service CcmExec, then Start-Sleep -Seconds 30, then control smscfgrc and in Actions run Machine Policy Retrieval and Application Deployment Cycle with 30 second intervals
+Here are some helpful commands for the steps:   
+![Command](./images/command.png)    
+
 
 
 # Windows Updates Deployment
