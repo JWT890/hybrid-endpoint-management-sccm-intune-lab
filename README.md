@@ -338,6 +338,10 @@ For deployment settings choose required and hit next. For scheduling, set the av
 Then hit next until the install screen. Then after a couple seconds:    
 ![Next](./images/status.png)    
 Then go to Config Manager in the Client VM. 
+*While troubleshooting over the past few days, I found that there was an issue with the automatic deployment not going through to the Client VM. So I had to manually deploy the Chrome package. Can review the document I uploaded above. Will provide steps for how until can be fixed but the Claude doc is better at explaining*
+First step is by noticing that the BitsTransfer 404 error, start by going to the DP first and using a correct path such as Invoke-WebRequest "http://192.168.10.20/SMS_DP_SMSPKG$/PS100006" -UseBasicRouting. Type http instead of https.   
+Then type Start-BitsTransfer -Source "http://192.168.10.20/SMS_DP_SMSPKG$/PS100006.3/googlechromestandaloneenterprise64.msi" -Destination "C:\Windows\Temp\chrome.msi" -ProxyUsage NoProxy. Then type Get-ChildItem "C:\SCCMContentLib\PkgLib" | Where-Object Name -like "*PS100006*" 
+Next step
 
 
 # Windows Updates Deployment
@@ -347,6 +351,8 @@ Then go to Config Manager in the Client VM.
 # Report Creation
 
 # Compliance Settings
+
+# OS Installation on VM
 
 
 
