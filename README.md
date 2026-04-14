@@ -345,6 +345,7 @@ Next step is to verify or change the assigned Management Point for the client. T
 Next step is to check the CRL to see if its blocking content download. Start by typing Get-WmiOjbect -Namespace root\ccm\softmgmtagent -Class CacheInfoEx | Where-Object { $_.ContentID -like "*PS100006*" } | Select-Object ContentID, ContentVersion, Location, ContentSize. Then go to Administration -> Site Configuration -> Sites, right click on sites and go to Properties and go the Communications Security tab and uncheck the Clients check the CRL for site systems, then apply -> OK. Then restart and type Restart-Service CcmExec, then Start-Sleep -Seconds 30, then control smscfgrc and in Actions run Machine Policy Retrieval and Application Deployment Cycle with 30 second intervals
 Here are some helpful commands for the steps:   
 ![Command](./images/command.png)    
+Current known issues are with EHTTP with the current workaround being to run Start-BitsTransfer -Source "http://sccm.lab.local/SMS_DP_SMSPKG$/PS100006.3/googlechromestandaloneenterprise64.msi" -Destination "C:\Windows\ccmcache\chrome.msi" -ProxyUsage NoProxy, then run msiexec /i "C:\Windows\ccmcache\chrome.msi" /qn and Chrome should appear afer a few seconds. Relevant logs to check on Client machine are PolicyAgent.log, execmgr.log, ContentTransferManager.log, CAS.log, and distmgr.log.  
 
 
 
