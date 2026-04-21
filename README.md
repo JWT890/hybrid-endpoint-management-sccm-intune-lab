@@ -357,7 +357,19 @@ Then enter in the required infomation needed and hit next.
 Then you will go the create an identity page with options for username, domain name, and password. Set the username to something like yournameadmin and for domain name enter in namelab and then enter in a strong password, then hit next.    
 Then you will see a screen asking you to input your card info. This is mainly for verification purposes unless you want to buy something, set a reminder for about 85 days after signup to cancel your account. After inputting, you will need to input your phone number and sign up for MFA with the Microsoft Authenticator app to verify. After a few seconds a pop up screen will pop up with confirmation details and then click on get started option. Aftera a couple seconds, the admin center will pop up like so:    
 ![Site3](./images/site3.png)    
-
+Then next click on show all which will show admin center, then select on Microsoft Intune, which will show a new page with Devices on it. Then head to Device Onboarding and select on enrollment:  
+![Enroll](./images/enroll.png)  
+Make sure its on Windows, then go over the CLIENT01 VM and go to settings and then accounts and find the option to access work or school account like so:   
+![Account](./images/account.png)    
+Make sure to also have a second adapter set to NAT so the internet can be accessed. 
+After getting second adapter up should see this:    
+![Signin](./images/sign-in.png) 
+Enter in the credentials for Intune and should see this:    
+![Account2](./images/account2.png)  
+Then click on done and go to the Devices -> All Devices and wait a few minutes. Before this, make sure to get the P2 trial which will enable auto enrollment. Go to users and select the admin user and enroll it into the Microsoft Entra ID P2 and hit save changes.  
+Now in auto enrollmet should see this:  
+![Enroll2](./images/enroll2.png)    
+Change the MDM user scope from none to all and hit save.
 
 
 # Windows Updates Deployment
