@@ -369,8 +369,13 @@ Enter in the credentials for Intune and should see this:
 Then click on done and go to the Devices -> All Devices and wait a few minutes. Before this, make sure to get the P2 trial which will enable auto enrollment. Go to users and select the admin user and enroll it into the Microsoft Entra ID P2 and hit save changes.  
 Now in auto enrollmet should see this:  
 ![Enroll2](./images/enroll2.png)    
-Change the MDM user scope from none to all and hit save.
+Change the MDM user scope from none to all and hit save. Then go to the DC VM and go entra.microsoft.com and sign in with the credentials. Should see this: 
+![Connect](./images/connect.png)    
+Then click on Connect Sync and scroll till you see Connect Sync Agent and click on it and accept terms and download and should be called AzureADConnect.    
 
+# Hybrid Join
+
+# Return to Test Application Package
 
 # Windows Updates Deployment
 
