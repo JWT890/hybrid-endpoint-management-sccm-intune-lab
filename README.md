@@ -347,6 +347,17 @@ Here are some helpful commands for the steps:
 ![Command](./images/command.png)    
 Current known issues are with EHTTP with the current workaround being to run Start-BitsTransfer -Source "http://sccm.lab.local/SMS_DP_SMSPKG$/PS100006.3/googlechromestandaloneenterprise64.msi" -Destination "C:\Windows\ccmcache\chrome.msi" -ProxyUsage NoProxy, then run msiexec /i "C:\Windows\ccmcache\chrome.msi" /qn and Chrome should appear afer a few seconds. Relevant logs to check on Client machine are PolicyAgent.log, execmgr.log, ContentTransferManager.log, CAS.log, and distmgr.log.  
 
+# Intune Configuration and Integration
+Another option to get applications is to get Intune configured with the system. First will need to sign up for a 90 trial with Intune.  
+First go to this link: https://signup.microsoft.com/get-started/signup?offerid=71fe267c-1b50-4ac5-b278-28a2e4b6b7d1&ali=1&products=71fe267c-1b50-4ac5-b278-28a2e4b6b7d1&culture=en-us&country=us&bpr=1. Clicking on the link should get you in first step of the sign up portal where you enter your email. If personal is being used, after hitting next, you should see this screen:  
+![Signup](./images/sign-up.png) 
+Then choose the set up account account and see this screen: 
+![Info2](./images/info2.png)    
+Then enter in the required infomation needed and hit next.  
+Then you will go the create an identity page with options for username, domain name, and password. Set the username to something like yournameadmin and for domain name enter in namelab and then enter in a strong password, then hit next.    
+Then you will see a screen asking you to input your card info. This is mainly for verification purposes unless you want to buy something, set a reminder for about 85 days after signup to cancel your account. After inputting, you will need to input your phone number and sign up for MFA with the Microsoft Authenticator app to verify. After a few seconds a pop up screen will pop up with confirmation details and then click on get started option. Aftera a couple seconds, the admin center will pop up like so:    
+![Site3](./images/site3.png)    
+
 
 
 # Windows Updates Deployment
