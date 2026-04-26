@@ -384,7 +384,15 @@ Enter in the on.microsoft.com credentials and hit next and enter in the password
 Then enter in the DC credentials and see this:  
 ![Config](./images/config1.png) 
 Then check the continue without matching all UPON suffixes and hit next.    
-
+Then it will get to the review settings page, check the sync process when config complete and hit install and wait a while. 
+After a few moments you might get this: 
+![Error](./images/error.png)    
+The error most likely is corresponding with a expired certificate. Go to entra.microsoft.com -> Identity -> Applications -> App registrations and then click on all app applications and likely see this:   
+![App](./images/log1.png)   
+Then go to Control Panel and get to Uninstall a Program and uninstall Microsoft Entra Connect Sync and then run this PowerShell command:    
+Remove-Item "C:\Program Files\Microsoft Azure Active Directory Connect" -Recurse -Force -ErrorAction SilentlyContinue.  
+Then restart the DC and run the freshly downloaded installer since it seems like the previous one is now outdated.  
+Then go through the previous steps as before.
 
 # Return to Test Application Package
 
