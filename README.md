@@ -374,6 +374,17 @@ Change the MDM user scope from none to all and hit save. Then go to the DC VM an
 Then click on Connect Sync and scroll till you see Connect Sync Agent and click on it and accept terms and download and should be called AzureADConnect.    
 
 # Hybrid Join
+After clicking on it or right clicking, click on install, then a screen will pop up saying to agree to the terms and conditions, check it and continue, and then click on Express Settings. After a couple seconds, you will be prompted to enter the admin credentials for Entra ID.   
+You might also run into this as well:   
+![Installer](./images/installer.png)    
+Click on add and add https://aadcdn.msauth.net to the trusted sites and hit close. After which this will pop up:    
+![Login](./images/login.png)    
+Enter in the on.microsoft.com credentials and hit next and enter in the password, after a couple seconds the Connecto to AD DS will pop up. 
+![AD](./images/AD.png)  
+Then enter in the DC credentials and see this:  
+![Config](./images/config1.png) 
+Then check the continue without matching all UPON suffixes and hit next.    
+
 
 # Return to Test Application Package
 
