@@ -392,7 +392,15 @@ The error most likely is corresponding with a expired certificate. Go to entra.m
 Then go to Control Panel and get to Uninstall a Program and uninstall Microsoft Entra Connect Sync and then run this PowerShell command:    
 Remove-Item "C:\Program Files\Microsoft Azure Active Directory Connect" -Recurse -Force -ErrorAction SilentlyContinue.  
 Then restart the DC and run the freshly downloaded installer since it seems like the previous one is now outdated.  
-Then go through the previous steps as before.
+Then go through the previous steps as before. 
+If the errors persist, go and download the AADConnectProvisioningAgentSetup.exe and run it as administrator, then agree to the terms, hit install, then the Azure AD authentication prompt will appear and enter in the creds and hit sign in, then for service account select the gMSA option and type in the creds, then connect to Active Directory with lab.local and LAB\Administrator and the password and hit next and then configure which should finish successfully.  
+Then in the Azure portal, go Microsoft Entra ID -> Entra Connect and go to Cloud Sync -> Agents and see this:   
+![Agent1](./images/agent1.png)  
+Then go to configurations and select the option of AD to Microsoft Entra Connect and see this:  
+![Cloud](./images/new-cloud.png)    
+Then hit create and wait a few seconds and have password hash sync enabled. Or wait until the overview page fully loads. After waiting a few minutes:   
+![Loaded](./images/loaded.png)  
+
 
 # Return to Test Application Package
 
