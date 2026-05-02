@@ -400,6 +400,21 @@ Then go to configurations and select the option of AD to Microsoft Entra Connect
 ![Cloud](./images/new-cloud.png)    
 Then hit create and wait a few seconds and have password hash sync enabled. Or wait until the overview page fully loads. After waiting a few minutes:   
 ![Loaded](./images/loaded.png)  
+Then click on review and enable and hit enable configuration and wait a few seconds.    
+After a few seconds, go to provision on demand and see this:    
+![User](./images/user.png)  
+Then type in sccadmin and wait for it to sync.
+
+After spending a few days troubleshooting, it appears that the Error that can be seen in the above image when configuring is tied to a UTC to Local Time error and should be fixed accordinally, along with moving the Entra install from the DC to SCCM for security purposes. 
+TO fix the error with UTC to local time type in these commands: 
+w32tm /config /manualpeerlist:"2.pool.ntp.org" /syncfromflags:manual /reliable:YES /update  
+net stop w32time    
+net start 32time    
+w32tm resync /force 
+Then go to app registrations and delete all applications that were registered before and then go back to the wizard and hit retry and see this: 
+![Complete](./images/complete.png)  
+Then go to the Start Menu and look for Synchronization Services and click on it and see these results:  
+![Operations](./images/operations.png)  
 
 
 # Return to Test Application Package
