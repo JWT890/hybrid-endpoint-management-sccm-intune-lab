@@ -416,6 +416,13 @@ Then go to app registrations and delete all applications that were registered be
 Then go to the Start Menu and look for Synchronization Services and click on it and see these results:  
 ![Operations](./images/operations.png)  
 
+For the setup, go the DC VM and go to the command line and type lodctr /R and then type winmgmt /resyncperf and then lodctr /R. Then type Add-ADGroupMember -Identify "Performance Monitor Users" -Members "pGMSA_153427cd$". THen type Get-ADServiceAccount -Filter 'Name -like "*"' | Select-Object Name, DistinguishedName. Then type Add-ADGroupMember -Identity "Performance Monitor Users" -Members "CN=provAgentgMSA,CN=Managed Service Accounts,DC=lab,DC=local". Then Install-ADSreviceAccount -Identify "CN=provAgentgMSA,CN=Managed Service Accounts,DC=lab,DC=local". THen type Get-ADComputer -Identity $env:COMPUTERNAME -Properties *ServiceAccount* | Select-Object Name, msDS-HostServiceAccountBLS. Then type Set-ADServiceAccount -Identity "CN=provAgentgMSA,CN=Managed Service Accounts,DC=lab,DC=local" -PrincipalsAllowedtoRetrieveManagedPassword "WIN-350BDGK795L$".   
+Then type Get-ADServiceAccount -Filter "Name -like '*prov*'" | Select-Object Name, DistinguishedName. THen type Add-KdsRootKey -EffectiveTime ((Get-Date).AddHours(-10)). Then type New-ADServiceAccount -Name "provAgentgMSA" -DNSHostName "provAgentgMSA.lab.local" -PrincipalsAllowedtoRetrieveManagePassword "SCCM$". Then type Get-ADServiceAccount -Identity "provAgentgMSA". 
+Then on the SCCM VM, type Install-WindowsFeature RSAT-AD-PowerShell, then type Import-Module ActiveDirectory, then type Install-ADServiceAccount -Identity "provAgentgMSA", then type Test-ADServiceAccount -Identity "provAgentgMSA".  
+Then test port connection on SCCM by typing Test-NetConnection -Port 443 and 80 respectively and see that it can connect.   
+Back in the DC VM create a test user account with the @jonlab2026.onmicrosoft.com domain and click OK. Then add the test user and other users to a OU named Entry_Sync_Users and move them into there. Then in in New Configuration in Entra, have the option set to Scope by OU and with the DN name of it as OU=Entra_Sync_Users,DC=lab,DC=local. Then after following the above steps of getting rid of the contents of the folder and time sync, click on configure or retry and it should go through in Users in Entra:    
+![Users](./images/users.png)    
+
 
 # Return to Test Application Package
 
