@@ -423,6 +423,10 @@ Then test port connection on SCCM by typing Test-NetConnection -Port 443 and 80 
 Back in the DC VM create a test user account with the @jonlab2026.onmicrosoft.com domain and click OK. Then add the test user and other users to a OU named Entry_Sync_Users and move them into there. Then in in New Configuration in Entra, have the option set to Scope by OU and with the DN name of it as OU=Entra_Sync_Users,DC=lab,DC=local. Then after following the above steps of getting rid of the contents of the folder and time sync, click on configure or retry and it should go through in Users in Entra:    
 ![Users](./images/users.png)    
 
+Then its time to get the Client VM properly enrolled in MDM since it will say none. In the DC VM, go to Group Policy Management and expand the lab.local forest and right click on lab.local and and click on the option of Create a GPO and like so:   
+![GPO](./images/gpo.png)    
+Name the GPO Intune-Auto-Enrollment, then hit refresh and it should pop up, then click on Link an Existing GPO and choose the Intune-Auto-Enrollment one and click apply and OK.    
+Then right click on the new policy and click on edit and go to Computer Configuration -> Policies -> Administrative Templates -> Windows Components -> MDM and should see the policy of Enabling automatic enrollment using default creds and click on enable, then options and then for select credential type set it to user credential and hit apply then ok. Then afterwards, move the Client VM into the Managed_Workstations OU after creating it. 
 
 # Return to Test Application Package
 
