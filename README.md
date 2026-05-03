@@ -426,7 +426,14 @@ Back in the DC VM create a test user account with the @jonlab2026.onmicrosoft.co
 Then its time to get the Client VM properly enrolled in MDM since it will say none. In the DC VM, go to Group Policy Management and expand the lab.local forest and right click on lab.local and and click on the option of Create a GPO and like so:   
 ![GPO](./images/gpo.png)    
 Name the GPO Intune-Auto-Enrollment, then hit refresh and it should pop up, then click on Link an Existing GPO and choose the Intune-Auto-Enrollment one and click apply and OK.    
-Then right click on the new policy and click on edit and go to Computer Configuration -> Policies -> Administrative Templates -> Windows Components -> MDM and should see the policy of Enabling automatic enrollment using default creds and click on enable, then options and then for select credential type set it to user credential and hit apply then ok. Then afterwards, move the Client VM into the Managed_Workstations OU after creating it. 
+Then right click on the new policy and click on edit and go to Computer Configuration -> Policies -> Administrative Templates -> Windows Components -> MDM and should see the policy of Enabling automatic enrollment using default creds and click on enable, then options and then for select credential type set it to user credential and hit apply then ok. Then afterwards, move the Client VM into the Managed_Workstations OU after creating it. Then right click on the Managed_Workstations OU and click on Link Enabled and set it to yes.   
+Then go to the Client VM and run the command gpupdate /force, then run gpresult /r /scope computer to confirm it is there like so:  
+![Policy](./images/policy-object.png)   
+Then go to the SCCM VM and open Task Scheduler and follow the path to EnterpriseMgmt:   
+![Task](./images/task.png)  
+Then type Start-ADSyncSyncCycle -PolicyType Delta, then Import-Module ADSync, then Start-ADSyncSyncCycle -PolicyType Delta. Then open the Synch Service for successful runs.    
+First in the DCM VM go to the SCCM Admin user after going to ADUC and clicking on View -> Advanced Features -> Advanced and click the user properties -> Security -> Advanced and then click on Enable Inheritance and enable write permission, then run Start-ADSyncSyncCycle -PolicyType Delta.   
+
 
 # Return to Test Application Package
 
