@@ -433,7 +433,7 @@ Then go to the SCCM VM and open Task Scheduler and follow the path to Enterprise
 ![Task](./images/task.png)  
 Then type Start-ADSyncSyncCycle -PolicyType Delta, then Import-Module ADSync, then Start-ADSyncSyncCycle -PolicyType Delta. Then open the Synch Service for successful runs.    
 First in the DCM VM go to the SCCM Admin user after going to ADUC and clicking on View -> Advanced Features -> Advanced and click the user properties -> Security -> Advanced and then click on Enable Inheritance and enable write permission, then run Start-ADSyncSyncCycle -PolicyType Delta.   
-
+Then on the DC VM, go to ADUC and go to the properties of SCCM Admin and remove it from the Domain Admins group, then run Start-ADSyncSyncCycle -PolicyType Initial. Then go to ADUC for SCCM Admin and go to Attribute Editor and for adminCount change it from 1 to 0. Then make sure to grant full rights to the MSOL_ accounts that are there. Then run Start-ADSyncSyncCycle -PolicyType Delta. Running in Sync Service should get the success that is needed. Then in the SCCM VM run the command Set-TimeZone -Name "Central Standard Time" which sould reset it
 
 # Return to Test Application Package
 
