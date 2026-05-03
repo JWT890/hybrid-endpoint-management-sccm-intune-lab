@@ -438,7 +438,10 @@ Then go to the Azure AD Connect and select configure -> Configure Device Options
 Next up is configuring the exact UTC time between DC and Client. ON the DC, type w32tm /config /manualpeerlist:"0.pool.ntp.org 1.pool.ntp.org" /syncfromflags:manual /reliable:yes /update, then Restart-Service w32time, then w32tm /resync, then [System.DateTime]::UtcNow which should get the UTC time. Then in the Client VM type dsregcmd /leave, then dsregcmd /join /debug with this result:    
 ![Result1](./images/result1.png)    
 ![Result2](./images/result2.png)    
-
+Then its time to go and get ISUserADJoined set to Yes, AzureADPort set to Yes, and for MDMUrl to have something.    
+Go to the Microsoft 365 Admin center and go to active users in users and find the SCCM Admin user, and test user, gave them these licenses: 
+![License](./images/license.png)    
+Then hit save and go to the Client VM and type gpupdate /force. Then sign out and go to the SCCM VM and type Get-ADUser sccmadmin -Properties UserPrincipalName | Select UserPrincipalName, then type Set-ADUser sccmadmin -UserPrincipalName "sccmadmin@jonlab2026.onmicrosof.com", then type Set-AdAccountPassword -Identity sccmadmin -Reset -NewPassword (ConvertTo-SecureString "Password here" -AsPlainText -Force), then type Unlock-ADAccount -Identity sccmadmin
 
 # Return to Test Application Package
 
