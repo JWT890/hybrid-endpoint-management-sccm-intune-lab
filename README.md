@@ -441,7 +441,14 @@ Next up is configuring the exact UTC time between DC and Client. ON the DC, type
 Then its time to go and get ISUserADJoined set to Yes, AzureADPort set to Yes, and for MDMUrl to have something.    
 Go to the Microsoft 365 Admin center and go to active users in users and find the SCCM Admin user, and test user, gave them these licenses: 
 ![License](./images/license.png)    
-Then hit save and go to the Client VM and type gpupdate /force. Then sign out and go to the SCCM VM and type Get-ADUser sccmadmin -Properties UserPrincipalName | Select UserPrincipalName, then type Set-ADUser sccmadmin -UserPrincipalName "sccmadmin@jonlab2026.onmicrosof.com", then type Set-AdAccountPassword -Identity sccmadmin -Reset -NewPassword (ConvertTo-SecureString "Password here" -AsPlainText -Force), then type Unlock-ADAccount -Identity sccmadmin
+Then hit save and go to the Client VM and type gpupdate /force. Then sign out and go to the SCCM VM and type Get-ADUser sccmadmin -Properties UserPrincipalName | Select UserPrincipalName, then type Set-ADUser sccmadmin -UserPrincipalName "sccmadmin@jonlab2026.onmicrosof.com", then type Set-AdAccountPassword -Identity sccmadmin -Reset -NewPassword (ConvertTo-SecureString "Password here" -AsPlainText -Force), then type Unlock-ADAccount -Identity sccmadmin.  
+Then go search for the Sync Service and open it and click on connectors, select lab.local and run a delta sync and hit OK, wait for a success message, then go to jonlab2026.onmicrosoft.com, hit run, then delta sync, then OK. After waiting a few minutes, head back over to the Client VM and see this: 
+![Login1](./images/login1.png)  
+Then run dsregcmd /status and see if MDMUrl, AzureADPrt and IsUserAzureAD changed like so:  
+![Result3](./images/result3.png)    
+![Result4](./images/result4.png)    
+![Result5](./images/result5.png)    
+Looking over it appears that the ones mentioned have changed to Yes and or have a link now
 
 # Return to Test Application Package
 
