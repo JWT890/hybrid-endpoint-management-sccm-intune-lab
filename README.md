@@ -448,7 +448,12 @@ Then run dsregcmd /status and see if MDMUrl, AzureADPrt and IsUserAzureAD change
 ![Result3](./images/result3.png)    
 ![Result4](./images/result4.png)    
 ![Result5](./images/result5.png)    
-Looking over it appears that the ones mentioned have changed to Yes and or have a link now
+Looking over it appears that the ones mentioned have changed to Yes and or have a link now. Then its time to work on getting MDM changed from None. 
+Go Device Enrollment Manageer in Intune Admin Center, click on add and type sccmadmin@jonlab.microsoft.com and click on add. Then in Client VM go to Settings -> Accounts -> Access work or school, if it pops up with no priveleges, then go to Entra or Azure AD and click on Users for sccm admin and click on assigned roles, then click on add assignment for select Intune administrator and click on add like so:    
+![More](./images/more.png)  
+Then click on next and assign and set the parameters to this like below:    
+![Assignment](./images/assignments.png) 
+Then click on assign and wait for a few seconds for it to appear in assigned roles. 
 
 # Return to Test Application Package
 
