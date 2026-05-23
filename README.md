@@ -454,6 +454,21 @@ Go Device Enrollment Manageer in Intune Admin Center, click on add and type sccm
 Then click on next and assign and set the parameters to this like below:    
 ![Assignment](./images/assignments.png) 
 Then click on assign and wait for a few seconds for it to appear in assigned roles. 
+In the DC VM, go to Group Policy and make sure the following settings are correct for the GPOs: 
+![Group](./images/group.png)    
+Then in the SCCM VM, go the SCCM Console -> Administration -> Cloud Services -> Cloud Attach and see this:  
+![Cloud](./images/cloud.png)    
+It will be blank at first so right click on cloud attach and see the setup screen with a sign in option. Sign in with the main admin global account, but before that in the Client VM go to regedit as admin and go to the following:   
+![Reg](./images/reg.png)    
+And delete the keys that aren't Status, Ownership, or Context. Then go back to the SCCM one and see this:   
+![Cloud](./images/cloud.png)    
+Click on sign in and afterwards, press on next and see this after a few seconds:    
+![Completion](./images/completion.png)  
+Then you should see the CoManagement cloud attach item from the picture.
+Then go to the Client VM and run & "$env:SystemRoot\system32\DeviceEnroller.exe" /c /AutoEnrollMDM. 
+Then go to the Intune center and see this in Windows Devices:   
+![Devices1](./images/devices1.png)  
+
 
 # Return to Test Application Package
 
