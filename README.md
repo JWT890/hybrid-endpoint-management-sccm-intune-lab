@@ -468,7 +468,9 @@ Then you should see the CoManagement cloud attach item from the picture.
 Then go to the Client VM and run & "$env:SystemRoot\system32\DeviceEnroller.exe" /c /AutoEnrollMDM. 
 Then go to the Intune center and see this in Windows Devices:   
 ![Devices1](./images/devices1.png)  
-
+To change MDM authority go to this link: https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/ChooseMDMAuthorityBlade. Which should allow for change with MDM authority from this picture:    
+![MDM](./images/mdm.png)    
+Then go the Client VM
 
 # Return to Test Application Package
 
