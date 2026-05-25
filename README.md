@@ -495,8 +495,15 @@ Then click on install and wait for a few minutes. After a few minutes:
 Then you will see Spotify in the start menu and click on it to make sure you can access it like so: 
 ![Spotify1](./images/spotify1.png)  
 
-
 # Windows Updates Deployment
+Next is to do Windows update deployment, go the SCCM Server and make sure that WSUS is installed, then open Config Manager and go to Administration -> Site Configuration -> Servers and Site system roles. Then right click on the site and choose the option of Add Site System Roles and click next until here:  
+![Roles](./images/roles.png)    
+Select Software Update Point and hit next and keep the ports of 8530 and 8531 the same. Then click next until getting to Sync Source and select Sync from Microsoft Update. 
+Then in Sync Schedule, enable the sync on a schedule and set a schedule of a day or so. Then hit next and keep supersedence the same. Then in WSUS Maintenance check them all. Then keep the run times the same, hit next and for update files select the option of Download updates for approved updates. Then hit next and get to the classifications screen: 
+![Class](./images/class.png)    
+Select the options of Critical Updates, Security Updates, and Definition Updates. Then hit next and go to products and expand the options till you see Windows 10 and Windows Defender and select both. Then hit next and make sure language is correct. Then go to the Summary and confirm:    
+![Summary](./images/summary.png)    
+
 
 # Task Sequence
 
