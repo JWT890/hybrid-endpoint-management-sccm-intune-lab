@@ -509,7 +509,25 @@ Then go back to Config manager and go to Software Library -> Software Updates ->
 [Sync](./images/sync.png)   
 Then click on sync software settings and select on Yes. Then go to C:\Program Files\Microsoft Configuration Manager\Logs and scroll down to the wsyncmgr.log and go to the bottom of the log:   
 ![Synclog](./images/synclog.png)    
-Then go wait for a while before the next step. 
+Then go wait for a while before the next step. If it comes up with something like this: 
+![WSUS](./images/wsus.png)  
+Then go back and review the correct settings, then go check wcm.log and check for errors, if so go about doing this:    
+winmgmt /verifyrepository to verify if its there which it should be, if not run /salvagerepository  
+Then run Get-Service winmgmt | Select Status, StartType to see the running status  
+Then run netsh advfirewall firewall set rule group="Windows Management Instrumentation (WMI)" new enable=yes.   
+Then run Stop-Service winmgmt -Force and Start-Service winmgmt and Restart-Service SMS_EXECUTIVE. Then run: 
+$svc = Get-WmiObject Win32_Service -Filter "Name='SMS_EXECUTIVE'"   
+$svc.StopService()  
+Start-Sleep -Seconds 10 
+Start-Service SMS_EXECUTIVE and check wcm.log:  
+![WSUS1](./images/wsus1)    
+Then get SMS_EXECUTIVE back up fully by running:    
+Start-Service -Name "SMS_EXECUTIVE" -Verbose    
+Get-Service SMS_EXECUTIVE | Select Status, StartType    
+sc.exe start SMS_EXECUTIVE  
+Then run Get-Service SMS_EXECUTIVE | Select Status to see it running again
+Then go back to Software Library -> Software Updates -> All Software Updates and right click on Sync Software Updates and get wsyncmgr.log back up and watch it for updates and wait for a while.
+
 
 # Task Sequence
 
