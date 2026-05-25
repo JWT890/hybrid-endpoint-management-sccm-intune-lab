@@ -470,7 +470,12 @@ Then go to the Intune center and see this in Windows Devices:
 ![Devices1](./images/devices1.png)  
 To change MDM authority go to this link: https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/ChooseMDMAuthorityBlade. Which should allow for change with MDM authority from this picture:    
 ![MDM](./images/mdm.png)    
-Then go the Client VM
+Then go the Client VM and go to Services.msc and sign in as administrator for it. Then scroll down till you see SMS Agent Host and stop it, then hit refresh on top and get SMS Agent Host running again. Then to make sure it worked go to Local Disk -> Windows -> CCM and open up CMTrace and open up CoManagementHandler.log and check to see if the device provisioned or not: 
+![Logs1](./images/logs1.png)    
+Then go to Devicesin Entra ID and Intune Center to check for status:    
+![Enrolled](./images/enrolled.png)  
+![Enrolled1](./images/enrolled1.png)    
+
 
 # Return to Test Application Package
 
