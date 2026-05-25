@@ -476,8 +476,14 @@ Then go to Devicesin Entra ID and Intune Center to check for status:
 ![Enrolled](./images/enrolled.png)  
 ![Enrolled1](./images/enrolled1.png)    
 
-
 # Return to Test Application Package
+Now that everything is configured with Intune, lets install a app from Intune. To install a app from Intune go Apps -> Windows -> Create and select on App type like so:    
+![App](./images/app.png)    
+Then search up something like Brave and choose select and see this: 
+![Brave](./images/brave.png)    
+Then hit next and you will see this:    
+![App1](./images/app1.png)  
+Lets do the Group mode and hit next and review, then hit create. 
 
 # Windows Updates Deployment
 
