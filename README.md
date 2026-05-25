@@ -483,7 +483,18 @@ Then search up something like Brave and choose select and see this:
 ![Brave](./images/brave.png)    
 Then hit next and you will see this:    
 ![App1](./images/app1.png)  
-Lets do the Group mode and hit next and review, then hit create. 
+Lets do the Group mode and hit next and review, then hit create. At the same time go to the SCCM Server and go to the Config Manager and go to Cloud Attach in Admin -> Cloud Services -> Cloud Attach and click on properties and go to workloads like so: 
+![Mgmt](./images/mgmt.png)  
+Move the Client apps from Config Manager to Intune all the way then apply then ok.  
+Then go back to Intune and do something like Spotify to test it out and when configuring do for enrolled devices in the MDMUsers group and save it. Then go to Task Scheduler and find run the Schedule #3 sync ones like so:   
+![Scheduler](./images/scheduler.png)    
+Run both and then wait for a few minutes for it to pop up in the Company portal like so:    
+![Portal](./images/portal.png)  
+Then click on install and wait for a few minutes. After a few minutes:  
+![Install](./images/install1.png)   
+Then you will see Spotify in the start menu and click on it to make sure you can access it like so: 
+![Spotify1](./images/spotify1.png)  
+
 
 # Windows Updates Deployment
 
