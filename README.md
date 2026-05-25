@@ -503,7 +503,13 @@ Then in Sync Schedule, enable the sync on a schedule and set a schedule of a day
 ![Class](./images/class.png)    
 Select the options of Critical Updates, Security Updates, and Definition Updates. Then hit next and go to products and expand the options till you see Windows 10 and Windows Defender and select both. Then hit next and make sure language is correct. Then go to the Summary and confirm:    
 ![Summary](./images/summary.png)    
-
+Then hit next and wait for a few minutes:   
+![Summary1](./images/summary1.png)  
+Then go back to Config manager and go to Software Library -> Software Updates -> All Software Updates:  
+[Sync](./images/sync.png)   
+Then click on sync software settings and select on Yes. Then go to C:\Program Files\Microsoft Configuration Manager\Logs and scroll down to the wsyncmgr.log and go to the bottom of the log:   
+![Synclog](./images/synclog.png)    
+Then go wait for a while before the next step. 
 
 # Task Sequence
 
