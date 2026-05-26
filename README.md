@@ -556,6 +556,15 @@ The command the photo is what should be used, then click on options and click on
 Then right click and hit deploy and see this:   
 ![Task3](./images/task3.png)    
 Click on browse for selection and choose the test lab computers and hit oK and hit next and go to deployment settings and have the purpose be available, leave scheduling as default and hit next and for user experience enable Show Task Sequence progress and hit next. Keep alerts and distro points as default and hit next on summary to install which should complete successfully and hit close.    
+Then go to Assets and Compliance -> Device Collections -> Test Lab Computers and verify Client VM is there. 
+Then to make sure everything is working on Client VM run the following: 
+Invoke-WMIMethod -Namespace root\ccm -Class SMS_CLIENT -Name TriggerSchedule "{00000000-0000-0000-0000-000000000021}"   
+Invoke-WMIMethod -Namespace root\ccm -Class SMS_CLIENT -Name TriggerSchedule "{00000000-0000-0000-0000-000000000121}"   
+Then go check on Client VM the following logs: PolicyAgent.log, CAS.log, execmgr.log. Also make sure to right click on installing application to set distro point to SCCM.lab.local.    
+Log Result: 
+![PolicyAgent](./images/PolicyAgent)    
+![CAS](./images/CAS)    
+![ExecMgmr](./images/Execmgr.webp)  
 
 
 # Report Creation
