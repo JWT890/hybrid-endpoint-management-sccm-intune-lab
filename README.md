@@ -565,7 +565,26 @@ Log Result:
 ![PolicyAgent](./images/PolicyAgent)    
 ![CAS](./images/CAS)    
 ![ExecMgmr](./images/Execmgr.webp)  
-
+Then on the client run Get-WmiObject -Namespace root\ccm -Class SMS_Authority to check connectivity and Get-WmiObject -Namespace root\ccm -Class SMS_MPPProxyInformation to check right pointing or not.    
+Then on Client run $mp = "SCCM.lab.local". Then run Invoke-WebRequest -Uri "http://$mp/sms_mp/.sms_aut?mplist" -UseBasicParsing and the SMSAuthority one again along with pinging SCCM.lab.local and nslookup to verify.    
+![500](./images/500)  
+the 500 error means that there is a 500 Internal Server Error so verify doing this on SCCM server: 
+Get-Service W3SCV | Select Status   
+Start-Service W3SVC 
+Then run Import-Module WebAdministration and then Get-WebApplication | Where-Object {$_.path - like "*sms_mp*"}
+THen go check Monitoring -> Site Status -> Component Status for SMS_MP_CONTROL_MANAGER. Then go check mpcontrol.log 
+Result: 
+![MP](./images/MP.webp) 
+![Status](./images/status1.webp)    
+![MPControl](./images/mpcontrol.webp)   
+To fix run on SCCM, Import-Module WebAdministration. Then run Restart-WebAppPool "SMS Management Point Pool". Then run Restart-WebAppPool "SMS Windows Auth Management Point Pool", then run iisreset /restart. Then wait 2 minutes and run Invoke-WebRequest -Uri "http://SCCM.lab.local/sms_mp/.sms_aut?mplist" -UseBasicParsing and see this:    
+![Parsing](./images/parsing.webp)   
+Then go to Client and run:  
+Invoke-WMIMethod -Namespace root\ccm -Class SMS_CLIENT -Name TriggerSchedule "{00000000-0000-0000-0000-000000000021}"   
+Invoke-WMIMethod -Namespace root\ccm -Class SMS_CLIENT -Name TriggerSchedule "{00000000-0000-0000-0000-000000000121}"  
+Then wait for around 5 minutes and go Software Center - Operating Systems and see this: 
+![Software](./images/software.webp) 
+ 
 
 # Report Creation
 
