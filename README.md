@@ -546,7 +546,17 @@ Then go to Applications in Software Library and create a new application with th
 And finish creating it and right click through the rest.    
 ![Zip](./images/zip.png)    
 Then right click on 7zip and select the Distribution point of SCCM.lab.local and finish it. 
- 
+Then go back to task sequence and click on edit and add software like before and click on the star button like below:   
+![Zip1](./images/zip1.png)  
+Click on Ok and add another step to restart the computer liek so:   
+![Sequence2](./images/sequence2.png)    
+Then add another sequence for running command line and name it Verify 7zip like so: 
+![Sequence3](./images/sequence3.png)    
+The command the photo is what should be used, then click on options and click on continue on error. Then hit OK.    
+Then right click and hit deploy and see this:   
+![Task3](./images/task3.png)    
+Click on browse for selection and choose the test lab computers and hit oK and hit next and go to deployment settings and have the purpose be available, leave scheduling as default and hit next and for user experience enable Show Task Sequence progress and hit next. Keep alerts and distro points as default and hit next on summary to install which should complete successfully and hit close.    
+
 
 # Report Creation
 
