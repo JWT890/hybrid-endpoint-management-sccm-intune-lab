@@ -584,7 +584,9 @@ Invoke-WMIMethod -Namespace root\ccm -Class SMS_CLIENT -Name TriggerSchedule "{0
 Invoke-WMIMethod -Namespace root\ccm -Class SMS_CLIENT -Name TriggerSchedule "{00000000-0000-0000-0000-000000000121}"  
 Then wait for around 5 minutes and go Software Center - Operating Systems and see this: 
 ![Software](./images/software.webp) 
- 
+Then click on it and click on the install screen:   
+![Application](./images/application.png)    
+
 
 # Report Creation
 
