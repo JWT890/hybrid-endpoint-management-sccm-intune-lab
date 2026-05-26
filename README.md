@@ -526,10 +526,27 @@ Start-Service -Name "SMS_EXECUTIVE" -Verbose
 Get-Service SMS_EXECUTIVE | Select Status, StartType    
 sc.exe start SMS_EXECUTIVE  
 Then run Get-Service SMS_EXECUTIVE | Select Status to see it running again
-Then go back to Software Library -> Software Updates -> All Software Updates and right click on Sync Software Updates and get wsyncmgr.log back up and watch it for updates and wait for a while.
-
+Then go back to Software Library -> Software Updates -> All Software Updates and right click on Sync Software Updates and get wsyncmgr.log back up and watch it for updates and wait for a while. Something to keep in mind was that Windows 10 EOS was last year so lets skip this for later.
 
 # Task Sequence
+Go to Software Library -> Operating Systems -> Task Sequences   
+But before doing so, lets go download 7-zip by going to https://www.7-zip.org/download.html and download 7zip. Then to to C:\Sources\Applications and create a 7zip folder and put the installer into it.   
+Then in task sequence right click in the screen and click on create application and see this:   
+![Task1](./images/task1.png)  
+Select on Create a new custom and hit next and name the Task sequence Installing Application and the description of Installs 7zip like below:   
+![Task2](./images/task2.png)    
+Then click on next and confirm the settings and wait a couple seconds for it to be done and hit close.  
+Then right click on it and click on edit and see this:  
+![Sequence](./images/sequence.png)  
+Then click on add dropdown and select dropdown Software -> and select on Install Application and see this:  
+![Sequence1](./images/sequence1.png)
+Then go to Applications in Software Library and create a new application with the 7zip msi and do it like this: 
+![App2](./images/app2.png)  
+*Make sure to add /Sources/*    
+And finish creating it and right click through the rest.    
+![Zip](./images/zip.png)    
+Then right click on 7zip and select the Distribution point of SCCM.lab.local and finish it. 
+ 
 
 # Report Creation
 
