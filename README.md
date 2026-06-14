@@ -586,6 +586,11 @@ Then wait for around 5 minutes and go Software Center - Operating Systems and se
 ![Software](./images/software.webp) 
 Then click on it and click on the install screen:   
 ![Application](./images/application.png)    
+*Good markdown and docx guides for solving a good bit of issues that have popped up in the task sequence part*
+To verify it worked type this:  
+![Worked](./images/worked.png)  
+Then go open the application:   
+![7-Zip](./images/7-Zip.png)    
 
 
 # Report Creation
