@@ -630,6 +630,14 @@ These 2 are a couple examples of logs of setup. Wait a while until it stops. Aft
 ![Log4](./images/log4.png)  
 The shutdown for 1 minute log means that it is done. Then run this command to see how many reports were created:    
 ![Report1](./images/report1.png)    
+Then go to http://SCCM:80/Reports and select ConfigMgr_PS1 that was created in the logs to verify and see this: 
+![Report2](./images/report2.png)    
+It shows 60 folders and 2 data sources and clicking on one of the folders shows more sub folders like so:   
+![Asset](./images/asset.png)    
+
+With the SCCM site done, its time to do a Intune side of it, go to https://intune.microsoft.com and go to Reports -> Device Management -> Device Compliance. Then to compare and go to ConfigMgr_PS1 -> Compliance and Settings Management -> Summary compliance by configuration policies with both looking like this: 
+![Intune](./images/intune.png)  
+![Compliance](./images/compliance.png)  
 
 
 # Compliance Settings
