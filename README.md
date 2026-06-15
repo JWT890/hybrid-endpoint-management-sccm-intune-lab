@@ -591,9 +591,23 @@ To verify it worked type this:
 ![Worked](./images/worked.png)  
 Then go open the application:   
 ![7-Zip](./images/7-Zip.png)    
-
+Next its time to move on to Report generation
 
 # Report Creation
+Start by verifying if SSRS is installed or not and see if its installed or not and verify health by running these commands: 
+![Health1](./images/health1.png)    
+It shows that we need to install SSRS, start by going to https://www.microsoft.com/en-us/download/details.aspx?id=55252 and see this:   
+![SSRS](./images/ssrs.png)  
+And clicking on download and download it.   
+After downloading, right click on it and run it as administrator and see this screen:   
+![Install2](./images/install2.png)  
+Click on it and select the free edition and hit next till the install portion and wait a couple seconds and see this:   
+![Reporting](./images/reporting.png)    
+Then click on Configure Report Server and see this: 
+![Server](./images/server.png)  
+Hit connect and it will go to the normal screen and head to service account and verify for correctness and then head to Web Service URL like so:    
+![Server1](./images/server1.png)    
+Then take note of the link for later since it will be needed. 
 
 # Compliance Settings
 
