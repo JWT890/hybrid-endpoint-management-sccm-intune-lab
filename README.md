@@ -607,7 +607,21 @@ Then click on Configure Report Server and see this:
 ![Server](./images/server.png)  
 Hit connect and it will go to the normal screen and head to service account and verify for correctness and then head to Web Service URL like so:    
 ![Server1](./images/server1.png)    
-Then take note of the link for later since it will be needed. 
+Then take note of the link for later since it will be needed. Then hit apply and wait a second before moving on and see this:   
+![Database](./images/database.png)  
+Then click on change database and see this screen:  
+![Option1](./images/option1.png)    
+Choose the create a new report server database then hit next, then for the next screen have SQL Server as SCCM or localhost and have authentication as Current User and hit next, on the database screen name the database ReportServer and hit next and go to database and leave it as is and hit next and go to summary which should look like this:  
+![Summary2](./images/summary2.png)  
+Then hit next and wait for a few seconds. After waiting for a few seconds, it will be done and able to click finish and see that its successful:    
+![Success1](./images/success1.png)  
+After clicking on finish it should say finished successfully. Then go to Web Service URL and see this:  
+![Web](./images/web.png)    
+Leave as is and click apply, if its greyed out go to Web Portal URL and click on apply. Then go back to Web Portal URL and click on the link and it will take to the site which should look like this:  
+![Site4](./images/site4.png)    
+Then go to Config Manager and go to Administration -> Site Configuration -> Servers and Site System Roles and right click on SCCM and click on add Site System Roles and go to System Role Selection and click on Reporting Services Point and hit next and go to the specify reporting services settings like so:  
+![Services](./images/services.png)  
+
 
 # Compliance Settings
 
