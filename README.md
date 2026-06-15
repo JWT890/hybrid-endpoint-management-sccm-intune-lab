@@ -621,6 +621,15 @@ Leave as is and click apply, if its greyed out go to Web Portal URL and click on
 ![Site4](./images/site4.png)    
 Then go to Config Manager and go to Administration -> Site Configuration -> Servers and Site System Roles and right click on SCCM and click on add Site System Roles and go to System Role Selection and click on Reporting Services Point and hit next and go to the specify reporting services settings like so:  
 ![Services](./images/services.png)  
+First verify database server name and then for username, choose existing and select the Administrator account, click ok and hit next to summary and verify and hit next for it to configure. After it gets done use CMTrace to view the log srsrp.log in C:\Program Files\Microsoft Configuration Manager\Logs\srsrp.log and watch for any success messages.    
+After a few minutes should start seeing logs like this: 
+![Log3](./images/log3.webp) 
+With earlier messages having created a folder called ConfigMgr_PS1
+![Config-Log](./images/config-log.webp) 
+These 2 are a couple examples of logs of setup. Wait a while until it stops. After waiting a while: 
+![Log4](./images/log4.png)  
+The shutdown for 1 minute log means that it is done. Then run this command to see how many reports were created:    
+![Report1](./images/report1.png)    
 
 
 # Compliance Settings
