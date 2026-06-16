@@ -667,6 +667,18 @@ Then go back to Configuration Manager properties, click evaluate and likely run 
 ![Command2](./images/command2.png)  
 Then run this set of commands:  
 ![Command3](./images/command3.png)  
+Then go back to Configuration Manager in Client and rerun the evaluate option and see that the status has changed and a new report has been created:    
+![Report3](./images/report3.png)    
+This shows that it worked. Now go back to the SCCM VM and go the website created earlier of http://SCCM:80/Reports and go to ConfigMgr_PS1 -> Compliance and Settings Management -> Summary compliance by configuration baseline and wait for a little bit for the report to appear.    
+After waiting about 20 minutes and and select the View Report option or refresh and see this:   
+![Report4](./images/report4.png)    
+Then click on the 1 for non-compliant and see this: 
+![Report5](./images/report5.png)    
+Then click on CLIENT01 and see this screen: 
+![Report6](./images/report6.png)    
+![Report7](./images/report7.png)    
+With the SCCM side of reporting and compliance done, time to do Intune side.    
+
 
 
 # OS Installation on VM
