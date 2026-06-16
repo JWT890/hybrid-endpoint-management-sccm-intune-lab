@@ -648,7 +648,12 @@ Name it Firewall - Domain Profile, setting type to Script, Data type to Boolean 
 Then click on Ok for it to save and go away and click on Compliance Rules tab and click on new and see this screen: 
 ![Compliance1](./images/compliance1.png)
 Name it Firewall Domain Profile Must Be Enabled, rule type to Value, operator to equals, value to true and noncompliance severity to Warning. Then click on OK twice and hit next till getting to summary to verify and wait for a few seconds and it should be done and visible in Configuration Items.    
-Then go to Configuration Baseline and right click on create configuration baseline. 
+Then go to Configuration Baseline and right click on create configuration baseline and see this screen: 
+![Baseline](./images/baseline.png)  
+Name it Lab - Security Baseline, then click on add -> Configuration Items and choose the Lab - Firewall Check that is available with the original presets, click on OK, and click on the option to enable the option of always apply this baseline even for co-managed clients. 
+
+Now its time to deploy the created baseline, start by right clicking on Lab - Security Baseline like so:    
+![Action](./images/action.png)  
 
 
 # OS Installation on VM
