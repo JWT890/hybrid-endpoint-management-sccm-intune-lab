@@ -593,7 +593,7 @@ Then go open the application:
 ![7-Zip](./images/7-Zip.png)    
 Next its time to move on to Report generation
 
-# Report Creation
+# Report Creation & Compliance Settings
 Start by verifying if SSRS is installed or not and see if its installed or not and verify health by running these commands: 
 ![Health1](./images/health1.png)    
 It shows that we need to install SSRS, start by going to https://www.microsoft.com/en-us/download/details.aspx?id=55252 and see this:   
@@ -639,8 +639,17 @@ With the SCCM site done, its time to do a Intune side of it, go to https://intun
 ![Intune](./images/intune.png)  
 ![Compliance](./images/compliance.png)  
 
+First lets do SCCM side of it. Go to Config Manager -> Assets and Compliance -> Configuration Items and right click and select the option of create configuration item and this screen will pop up: 
+![Option2](./images/option2.png)    
+Name it Lab - Firewall Check with type of Windows Desktops and Servers, then hit next and go to supported platforms and uncheck everything that isn't Windows 10 or Windows Server and hit next and go to settings and click on new and see this:   
+![Setting1](./images/setting1.png)  
+Name it Firewall - Domain Profile, setting type to Script, Data type to Boolean and click on add script and add this script:    
+![Code](./images/code.png)  
+Then click on Ok for it to save and go away and click on Compliance Rules tab and click on new and see this screen: 
+![Compliance1](./images/compliance1.png)
+Name it Firewall Domain Profile Must Be Enabled, rule type to Value, operator to equals, value to true and noncompliance severity to Warning. Then click on OK twice and hit next till getting to summary to verify and wait for a few seconds and it should be done and visible in Configuration Items.    
+Then go to Configuration Baseline and right click on create configuration baseline. 
 
-# Compliance Settings
 
 # OS Installation on VM
 
