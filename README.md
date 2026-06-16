@@ -654,6 +654,19 @@ Name it Lab - Security Baseline, then click on add -> Configuration Items and ch
 
 Now its time to deploy the created baseline, start by right clicking on Lab - Security Baseline like so:    
 ![Action](./images/action.png)  
+And clicking on Deploy and see this screen: 
+![Deploy](./images/deploy.png)  
+Make sure the selected baseline is there, then check Remediate noncompliant rules when supported and have a simple schedule of 1 day, and for collection select the dropdown and change it from user collection to device collection and select all systems or just Windows 10 Workstation and hit OK.  
+Then go to the Client VM and go to Control Panel -> Configuration Manager - Actions and run the Machine Policy Retrieval & Evaluation Cycle and Application Deployment Evaluation Cycle ones, then wait a few moments for the policy to appear like so: 
+![Rules3](./images/rules3.png)  
+Then click on evaluate for the baseline and after a couple seconds the report will appear. Now running this the first time pops with this:  
+![Error](./images/error1.png)
+The error code says the SCCM client execution policy requires signed scripts. For a fast fix, run this in powershell:   
+![Command1](./images/command1.png)  
+Then go back to Configuration Manager properties, click evaluate and likely run into the same error again, then go to Powershell and run this:  
+![Command2](./images/command2.png)  
+Then run this set of commands:  
+![Command3](./images/command3.png)  
 
 
 # OS Installation on VM
