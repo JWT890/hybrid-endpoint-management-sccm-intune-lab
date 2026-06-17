@@ -694,6 +694,13 @@ For the first screen, name it Lab - Firewall Policy with a description of Mirror
 ![Policy3](./images/policy3.png)    
 Expand the System Security dropdown and scroll down till you see Firewall option and make it required like so:  
 ![Firewall](./images/firewall.png)  
+Then hit next and move on to the Actions for non-compliance screen: 
+![Policy4](./images/policy4.png)    
+Leave as is and move on to assignments like so: 
+![Policy5](./images/policy5.png)    
+Select the option of All Devices so it can get the Client VM and hit next to the review page and hit create and see this:   
+![Report8](./images/report8.png)    
+Then go to the Client VM and run the following: 
 
 
 # OS Installation on VM
