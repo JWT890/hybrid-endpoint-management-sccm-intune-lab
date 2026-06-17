@@ -701,6 +701,13 @@ Leave as is and move on to assignments like so:
 Select the option of All Devices so it can get the Client VM and hit next to the review page and hit create and see this:   
 ![Report8](./images/report8.png)    
 Then go to the Client VM and run the following: 
+![Command4](./images/command4.webp) 
+Then refresh the page and see this in Intune:   
+![Policy6](./images/policy6.png)    
+Screen shows that it is non-compliant. To resolve go to PowerShell and run: 
+![Command5](./images/command5.png)  
+With the enabled as true go to the Config Manager in Control panel and find the Security Baseline and click evalutate on it which should make it compliant like so: 
+![Compliant](./images/compliant.webp)   
 
 
 # OS Installation on VM
