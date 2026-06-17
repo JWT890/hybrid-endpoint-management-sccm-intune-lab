@@ -679,6 +679,21 @@ Then click on CLIENT01 and see this screen:
 ![Report7](./images/report7.png)    
 With the SCCM side of reporting and compliance done, time to do Intune side.    
 
+For Intune go to Reports -> Device Management -> Device Compliance and click on the generate option and wait a couple seconds. Then after a couple seconds the report will be generated like so:    
+![Device1](./images/device1.png)    
+![Device2](./images/device2.png)    
+This shows the Client VM is compliant and managed by SCCM in a co-management environment. Now to create a Intune Compliancy policy will require changing the workload to Intune.    
+Go to SCCM console -> Administration -> Cloud Services -> Cloud Attach and right click on the property to change the setting:   
+![Property](./images/property.png)  
+Then hit apply and ok for the change to take affect.    
+Then go to Endpoint Security -> Device Compliance -> Policies -> Create Policy which will look like this:   
+![Policy1](./images/policy1.png)    
+For platform choose Windows 10 and later and a profile of Windows 10 compliance policy, then click create which should pop up with this:    
+![Policy2](./images/policy2.png)    
+For the first screen, name it Lab - Firewall Policy with a description of Mirrors SCCM firewall check - requires domain firewall profile enabled. Then hit next for the compliance settings screen: 
+![Policy3](./images/policy3.png)    
+Expand the System Security dropdown and scroll down till you see Firewall option and make it required like so:  
+![Firewall](./images/firewall.png)  
 
 
 # OS Installation on VM
