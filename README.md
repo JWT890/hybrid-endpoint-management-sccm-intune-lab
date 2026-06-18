@@ -708,9 +708,12 @@ Screen shows that it is non-compliant. To resolve go to PowerShell and run:
 ![Command5](./images/command5.png)  
 With the enabled as true go to the Config Manager in Control panel and find the Security Baseline and click evalutate on it which should make it compliant like so: 
 ![Compliant](./images/compliant.webp)   
-
+Then wait for a little bit for it to update in the report manager and should say compliant: 
+![Change](./images/change.png)  
+Intune will likely stay as non-compliant due to combination of hybrid and cloud
 
 # OS Installation on VM
+First step is to go to https://www.microsoft.com/software-download/windows11 and select the option download of Create Windows 11 Installation Media. 
 
 
 
