@@ -729,7 +729,24 @@ Run New-Item -Path "C:\Sources\Windows11" -ItemType Directory -Force to create a
 ![Folder](./images/folder.png)  
 Then run this command:  
 ![Change1](./images/change1.png)    
-This command will take a while since its having to convert the .esd file into a .wim file.
+This command will take a while since its having to convert the .esd file into a .wim file.  
+After waiting a while, it will be done then run Get-WindowsImage -ImagePath "C:\Sources\Windows11\install.wim" like so: 
+![Wim](./images/wim.png)    
+Then run the command Dismount-DiskImage -ImagePath "C:\Sources\Windows 11.iso" like so: 
+![Dismount](./images/dismount.png)  
+Then open up SCCM console and go to Software Library -> Operating Systems -> Operating System Image -> and right click and click on add operating system image: 
+![Image](./images/image.png)    
+Then this screen will pop up:   
+![Data](./images/data.png)  
+Then click on browse and open up the file folder:   
+![Path](./images/path.png)  
+And type the exact path to do so and click open which should save it. Then check the license box and hit next and leave pre-cache settings the same and hit next to go to General:  
+![General](./images/general.png)    
+Name it Windows 11 Pro and version to 24H2 and a comment of Lab OS Image - Pro Edition, converted from ESD. Then hit next to go summary and hit next for it to register and when done and hit close.    
+![Image2](./images/image2.png)  
+Then go to Boot Images and right click on Boot Image (x64) and click on Distribute Content and see this screen: 
+![Content1](./images/content1.png)  
+
 
 
 
