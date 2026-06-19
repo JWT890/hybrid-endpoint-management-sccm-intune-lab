@@ -714,6 +714,22 @@ Intune will likely stay as non-compliant due to combination of hybrid and cloud
 
 # OS Installation on VM
 First step is to go to https://www.microsoft.com/software-download/windows11 and select the option download of Create Windows 11 Installation Media. 
+After downloading, go to the File Folder and find the download run it and after a few seconds this screen will pop up:  
+![Install3](./images/install3.png)  
+Click accept and hit next and reach the language and edition screen, verify and hit next.   
+For media, choose ISO download and hit next and save it in C:\Sources and allow to create the ISO which should task a while then click finish afterwards.   
+Then open up PowerShell and run Mount-DiskImage -ImagePath "C:\Sources\Windows 11.iso" and Get-Volume | Where-Object {$_.FileSystemLabel -like "*CCCOMA* -or $_.DriveType -eq "CD-ROM"} to see this:    
+![ISO](./images/iso.png)    
+Then run Get-ChildItem "G:\sources" -Filter "install.*" like so:    
+![Source](./images/source.png)  
+Since its a .esd it needs to be a .wim run Get-WindowsImage -ImagePath "G:\sources\install.esd" to see what versions are available: 
+![Version](./images/version.png)    
+The one that is the best is Index 6 or the Windows 11 Pro one.  
+Run New-Item -Path "C:\Sources\Windows11" -ItemType Directory -Force to create a new destination folder:    
+![Folder](./images/folder.png)  
+Then run this command:  
+![Change1](./images/change1.png)    
+This command will take a while since its having to convert the .esd file into a .wim file.
 
 
 
