@@ -746,6 +746,21 @@ Name it Windows 11 Pro and version to 24H2 and a comment of Lab OS Image - Pro E
 ![Image2](./images/image2.png)  
 Then go to Boot Images and right click on Boot Image (x64) and click on Distribute Content and see this screen: 
 ![Content1](./images/content1.png)  
+Hit next and go to Content Destination and click on add -> Distribution Point and click on SCCM.lab.local and add it and hit next to register it. Then go to Operating System Images once again and repeat the same process and see success:    
+![Green](./images/green.png)    
+Then go to Task Sequence and right click to create a new Task Sequence and keep the first option below: 
+![New](./images/new1.png)   
+Then hit next and name it Deploy Windows 11 Pro and for Boot Image of Boot Image (x64) and hit next.    
+On the Install Windows screen you will see this:    
+![Pro](./images/pro.png)    
+Click on browse and you should see the image that was created earlier and add it, leave partition and format checked, uncheck configure with Bitlocker, leave product key blank, and choose the option of enable the account with the local admin password and hit next.    
+Then go to Configure Network and see this:  
+![Network](./images/network.png)    
+Have the option as set to Domain with lab.local and choose the Managed Workstation OU from this:    
+![Container](./images/container.png)    
+Then for the last one in the search box type LAB\Administrator and check names and hit ok and add it with its password and hit next until getting to summary to verify and hit next to complete the verification.   
+Next right click on Deploy Windows 11 Pro and hit deploy and see this screen:   
+![General1](./images/general1.png)   
 
 
 
