@@ -761,7 +761,23 @@ Have the option as set to Domain with lab.local and choose the Managed Workstati
 Then for the last one in the search box type LAB\Administrator and check names and hit ok and add it with its password and hit next until getting to summary to verify and hit next to complete the verification.   
 Next right click on Deploy Windows 11 Pro and hit deploy and see this screen:   
 ![General1](./images/general1.png)   
-
+For Collection click on browse and find the All Unknown Computers section:  
+![Unknown](./images/unknown.png)    
+Then hit ok which should select, then hit next and go to Deployment Settings and have the purpose set to Available and the make available set to this:  
+![Option3](./images/option3.png)    
+Then hit next and leave defaults and get to summary to verify the correct settings and hit next to register the settings and hit close. 
+Next right click and select the option of create Task Sequence Media and see this screen:   
+![Media](./images/media.png)    
+Select the option of bootable media and hit next and leave the next as dynamic and hit next and go to media type and see this:  
+![Type](./images/type.png)  
+In the Media file type C:\Sources\Windows 11.iso and hit next and see this: 
+![Option4](./images/option4.png)    
+Uncheck the protect media with a password and leave the create a self-signed media certificate and user device affinity as is and hit next and see this screen: 
+![Option5](./images/option5.png)    
+For the boot image choose Boot image (x64), dist point as SCCM.LAB.LOCAL and for management point choose SCCM.lab.local and hit next until the summary to verify and hit next which should start creating the iso and take a few minutes. When done hit cancel. 
+Next is getting the iso to a new VM to install by first running these commands: 
+![Info3](./images/info3.png)    
+The first step now is to shut down the SCCM VM and switch the network from NAT Network to Bridged so host can reach the VM
 
 
 
