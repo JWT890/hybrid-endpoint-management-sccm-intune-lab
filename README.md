@@ -777,7 +777,13 @@ Uncheck the protect media with a password and leave the create a self-signed med
 For the boot image choose Boot image (x64), dist point as SCCM.LAB.LOCAL and for management point choose SCCM.lab.local and hit next until the summary to verify and hit next which should start creating the iso and take a few minutes. When done hit cancel. 
 Next is getting the iso to a new VM to install by first running these commands: 
 ![Info3](./images/info3.png)    
-The first step now is to shut down the SCCM VM and switch the network from NAT Network to Bridged so host can reach the VM
+The first step now is to shut down the SCCM VM and add a second adapter that is host and open the VM back up and type ncpa.cpl which opens the network connections screen:  
+![Network1](./images/network1.png)  
+Notice Ethernet 2 and right click on it to enable it and after a few minutes should be enabled. Then go to command line and type ipconfig to get the IP address of the second adapter like so:  
+![Address](./images/address.png)    
+Then go to command line on the host machine and ping the second adapter:    
+![Ping](./images/ping.png)  
+
 
 
 
