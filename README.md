@@ -783,6 +783,15 @@ Notice Ethernet 2 and right click on it to enable it and after a few minutes sho
 ![Address](./images/address.png)    
 Then go to command line on the host machine and ping the second adapter:    
 ![Ping](./images/ping.png)  
+Then type in SCCM Rename-Item "C:\Sources\Windows 11.iso" "Win11BootMedia.iso" to make things easier for later. 
+Then type this command before doing the next commmand to open things up some:   
+![Temp](./images/temp.webp) 
+Then these following commands:  
+![Listen](./images/listen.png)  
+Then on the host type http://192.168.56.117:8000/Win11BootMedia.iso which should automatically download to the host and in downloads in the browser click the keep option and let it download and should appear like this:  
+![Download](./images/download.png)  
+Then rename it to Win11BootMedia.iso by right clicking and clicking on rename like so:  
+![Disc](./images/disc.png)  
 
 
 
