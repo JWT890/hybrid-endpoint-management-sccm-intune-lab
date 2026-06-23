@@ -814,9 +814,22 @@ The error that can be seen is that its trying to reach a MP but failing because 
 Next go back to the Win11-Target VM and type ping 192.168.19.19, nslookup SCCM.lab.local 192.168.10.10 and ping SCCM.lab.local  
 ![IP1](./images/ip1.webp)   
 The go back to the Configure Network Settings screen and enter this:    
-![IP2](./images/ip2.png)    
+![IP3](./images/ip3.png)    
 Then ok and click next and after a few minutes this should appear:  
 ![Run](./images/run.png)    
+Then click next and might run into this error:  
+![Error3](./images/error3.webp) 
+Then on the SCCM VM go to and go to Software Libarary -> Application Management -> Packages and click on COnfiguration Manager Client Package and look there first. 
+Then go here:   
+![Save](./images/save.png)  
+And scroll over some:   
+![Save1](./images/save1.webp)   
+And check Operating System Images:  
+![Save3](./images/save3.webp)   
+Then click on State Migration Package in Software Library -> Application Management -> Packages and right click on it for Windows and click on Distribute Content and go through it and add SCCM.LAB.LOCAL for distibution point and should work with a green success flag. 
+After that, go back to Target and enter in the above address through DNS server and hit next and should see this screen:    
+![Progress](./images/progress.webp) 
+Then wait for around 10-30 minutes for it to get done.
 
 
 
