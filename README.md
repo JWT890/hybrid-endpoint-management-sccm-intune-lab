@@ -812,7 +812,12 @@ The result of ping SCCM.lab.local means that its time to check smsts.log by typi
 The error that can be seen is that its trying to reach a MP but failing because DNS is failing. Next go to the DC VM and type ipconfig /all and see the ipconfig
 ![IP](./images/ip.webp) 
 Next go back to the Win11-Target VM and type ping 192.168.19.19, nslookup SCCM.lab.local 192.168.10.10 and ping SCCM.lab.local  
-![IP2](./images/ip1.webp)   
+![IP1](./images/ip1.webp)   
+The go back to the Configure Network Settings screen and enter this:    
+![IP2](./images/ip2.png)    
+Then ok and click next and after a few minutes this should appear:  
+![Run](./images/run.png)    
+
 
 
 
