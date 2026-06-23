@@ -792,7 +792,17 @@ Then on the host type http://192.168.56.117:8000/Win11BootMedia.iso which should
 ![Download](./images/download.png)  
 Then rename it to Win11BootMedia.iso by right clicking and clicking on rename like so:  
 ![Disc](./images/disc.png)  
-
+Then create the VM in VirtualBox and name it Win11-Target with type Microsoft Windows, Windows 11 64 bit, 8096 MB of Memory, 4 CPUs, hard disk size of around 80 GB, have TPM enabled, network set to NAT Network for SCCM lab and then attach Win11BootMedia.iso and have the boot order be optical, hard disk, and floppy. Then start the VM and see this screen after pressing a key on the press any key screen:    
+![Install4](./images/install4.png)  
+Then press next and after a few minutes might run into this error:  
+![Error2](./images/error2.png)  
+Once solution could be to go back and enter network settings like so:   
+![Settings](./images/settings1.png) 
+But it would be better to go to SCCM VM and open up the console and go to Software Library -> Operating Systems -> Boot Images and right click on Boot image (x64) and click on properties and go to the customization tab like so: 
+![Custom](./images/custom.png)  
+Then look down and see the Enable command support and check it and hit apply and ok and wait for a couple minutes for it to update. Then go to Task Sequences and right click to create a Task Sequence Media again with the new settings and name the new media with a 2 to differ from other. When done make sure to run this again:  
+![Script](./images/script.png)  
+And go to the new link on the host of http://192.168.56.117:8000/Win11BootMedia2.iso and download the new iso.
 
 
 
