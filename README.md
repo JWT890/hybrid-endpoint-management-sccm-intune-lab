@@ -802,7 +802,17 @@ But it would be better to go to SCCM VM and open up the console and go to Softwa
 ![Custom](./images/custom.png)  
 Then look down and see the Enable command support and check it and hit apply and ok and wait for a couple minutes for it to update. Then go to Task Sequences and right click to create a Task Sequence Media again with the new settings and name the new media with a 2 to differ from other. When done make sure to run this again:  
 ![Script](./images/script.png)  
-And go to the new link on the host of http://192.168.56.117:8000/Win11BootMedia2.iso and download the new iso.
+And go to the new link on the host of http://192.168.56.117:8000/Win11BootMedia2.iso and download the new iso. After a few minutes it should be there again. Then boot up the VM and get likely back to the error as before but press F8 and see the command prompt show up:    
+![Prompt](./images/prompt.png)  
+Then type these tests:  
+![Test](./images/test.png)  
+![Test1](./images/test1.png)    
+The result of ping SCCM.lab.local means that its time to check smsts.log by typing notepad X:\Windows\temp\SMSTSLog\smsts.log and scroll down to the bottom:    
+![Logs2](./images/logs2.png)    
+The error that can be seen is that its trying to reach a MP but failing because DNS is failing. Next go to the DC VM and type ipconfig /all and see the ipconfig
+![IP](./images/ip.webp) 
+Next go back to the Win11-Target VM and type ping 192.168.19.19, nslookup SCCM.lab.local 192.168.10.10 and ping SCCM.lab.local  
+![IP2](./images/ip1.webp)   
 
 
 
