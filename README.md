@@ -829,7 +829,10 @@ And check Operating System Images:
 Then click on State Migration Package in Software Library -> Application Management -> Packages and right click on it for Windows and click on Distribute Content and go through it and add SCCM.LAB.LOCAL for distibution point and should work with a green success flag. 
 After that, go back to Target and enter in the above address through DNS server and hit next and should see this screen:    
 ![Progress](./images/progress.webp) 
-Then wait for around 10-30 minutes for it to get done.
+Then wait for around 10-30 minutes or a long while for it to get done. Might have to restart the VM a couple times. 
+After a couple days of finding a solution, it seems the screen turns black and freezes and doesn't seem to continue:    
+![Froze](./images/froze.png)    
+Seems to be doing this even after turning Memory Integrity in Core Isolation is off and running: Disable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart. Turn them both back on later to ensure security. Good stopping point. 
 
 
 
